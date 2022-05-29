@@ -1,5 +1,7 @@
 <template>
-  <hello-world />
+  <v-sheet color="#fafbfe" height="100%">
+    <HelloWorld />
+  </v-sheet>
 </template>
 
 <script>
