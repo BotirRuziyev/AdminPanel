@@ -62,6 +62,21 @@
         placeholder="jamoa a'zosining E-maili"
         required
       ></v-text-field>
+      <hr class="danger--text hr" />
+      <p>Jamoa a'zosi haqida Rus tilida</p>
+      <v-textarea
+        outlined
+        name="input-7-4"
+        placeholder="jamoa a'zosi haqida Rus tilida"
+        class="my-10"
+      ></v-textarea>
+      <p>Jamoa a'zosi haqida Ingliz tilida</p>
+      <v-textarea
+        outlined
+        name="input-7-4"
+        placeholder="Jamoa a'zosi haqida Ingliz tilida"
+        class="my-10"
+      ></v-textarea>
       <v-btn depressed color="primary"> Yuklash </v-btn>
     </v-container>
   </v-sheet>
