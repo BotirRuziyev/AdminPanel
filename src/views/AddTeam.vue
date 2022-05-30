@@ -8,7 +8,7 @@
       <p>Jamoa a'zosining ismi rus tilida</p>
       <v-text-field
         outlined
-        v-model="name"
+        v-model="nameRus"
         :counter="15"
         :rules="nameRules"
         label="Jamoa a'zosining ismi rus tilida"
@@ -17,7 +17,7 @@
       <p>Jamoa a'zosining ismi ingliz tilida</p>
       <v-text-field
         outlined
-        v-model="name"
+        v-model="nameingliz"
         :counter="15"
         :rules="nameRules"
         placeholder="Jamoa a'zosining ismi ingliz tilida"
@@ -30,16 +30,16 @@
       <p>Jamoa a'zosining kasbi rus tilida</p>
       <v-text-field
         outlined
-        v-model="name"
+        v-model="kasbiRus"
         :counter="15"
         :rules="nameRules"
-        label="Jamoa a'zosining kasbi rus tilida"
+        placeholder="Jamoa a'zosining kasbi rus tilida"
         required
       ></v-text-field>
       <p>Jamoa a'zosining kasbi ingliz tilida</p>
       <v-text-field
         outlined
-        v-model="name"
+        v-model="kasbiIngliz"
         :counter="15"
         :rules="nameRules"
         placeholder="Jamoa a'zosining kasbi ingliz tilida"
@@ -49,7 +49,7 @@
       <p>Jamoa a'zosining rasmi</p>
       <v-file-input
         label="jamoa a'zosining rasmi"
-        aria-placeholder="jamoa a'zosining rasmi"
+        placeholder="jamoa a'zosining rasmi"
         outlined
         dense
       ></v-file-input>
@@ -73,10 +73,15 @@ export default {
     return {
       valid: true,
       name: "",
+      nameRus: "",
+      nameIngliz: "",
+      kasbiRus: "",
+      kasbiIngliz: "",
       nameRules: [
         (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 15) || "Name must be less than 10 characters",
+        (v) => (v && v.length <= 15) || "Name must be less than 15 characters",
       ],
+
       email: "",
       emailRules: [
         (v) => !!v || "E-mail is required",
