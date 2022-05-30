@@ -17,6 +17,7 @@
         <v-btn
       depressed
       color="primary"
+      class="mb-10"
     >
       Yuklash
     </v-btn>

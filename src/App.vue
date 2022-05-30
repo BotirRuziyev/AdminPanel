@@ -101,6 +101,7 @@
     <v-main>
       <router-view />
     </v-main>
+    <v-divider></v-divider>
      <v-footer
     color="#fafbfe"
     padless
@@ -114,7 +115,7 @@
         class="py-4 text-center dark--text"
         cols="12"
       >
-        Tas
+         2022 © Tasnim - tasnim.uz      
       </v-col>
     </v-row>
   </v-footer>
