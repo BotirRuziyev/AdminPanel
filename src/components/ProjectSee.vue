@@ -1,7 +1,7 @@
 <template>
 
      <v-container>
-       <h1 class="dark--text py-5">Loyihalar</h1>
+       <h1 class="dark--text py-3">Loyihalar</h1>
        <v-simple-table>
     <template v-slot:default>
       <thead class="py-16 template_bg" >

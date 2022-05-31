@@ -1,7 +1,7 @@
 <template>
   <v-sheet color="#fafbfe">
     <v-container class="px-10">
-      <h1 class="dark--text py-5">Loyihalar qo'shish</h1>
+      <h1 class="dark--text py-3">Loyihalar qo'shish</h1>
 
       <!-- Jamoa a'zosining ismi -->
 

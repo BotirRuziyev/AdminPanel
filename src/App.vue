@@ -166,6 +166,6 @@ a {
   width: 60px !important;
 }
 .app {
-  background: red;
+  background-color: #fafbfe !important;
 }
 </style>
