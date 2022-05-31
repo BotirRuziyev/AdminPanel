@@ -9,6 +9,6 @@ import BestProjectSee from "@/components/BestProjectSee"
 export default {
   components:{
     BestProjectSee,
-  }
+  },
 }
 </script>
