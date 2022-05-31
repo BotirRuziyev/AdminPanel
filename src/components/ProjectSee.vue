@@ -6,16 +6,16 @@
     <template v-slot:default>
       <thead class="py-16 template_bg" >
         <tr>
-          <th class="text-left font-weight-medium h6" colspan="1">
+          <th class="text-left font-weight-medium h6">
             <h3>Rasm</h3>
           </th>
-          <th class="text-left font-weight-medium h6" colspan="4">
+          <th class="text-left font-weight-medium h6">
             <h3>Turi</h3>
           </th>
-          <th class="text-left" colspan="4">
+          <th class="text-left">
             <h3>Nomi</h3>
           </th>
-          <th class="text-left" colspan="1">
+          <th class="text-left">
             	<h3>Tahrirlash</h3>
           </th>
         </tr>

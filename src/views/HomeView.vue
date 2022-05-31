@@ -1,17 +1,17 @@
 <template>
-  <v-sheet color="#fafbfe" height="100%">
-    <HelloWorld />
-  </v-sheet>
+  <v-container>
+    <HomeAdmin />
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import HomeAdmin from '@/components/HomeAdmin'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      HomeAdmin,
     },
   }
 </script>

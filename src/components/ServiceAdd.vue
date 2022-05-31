@@ -1,83 +1,78 @@
 <template>
   <v-sheet color="#fafbfe">
     <v-container class="px-10">
-      <h1 class="dark--text py-10">Eng yaxshi loyihani qo'shish</h1>
+      <h1 class="dark--text py-3">Xizmatlar qo'shish</h1>
 
-      <label>Eng yaxshi loyihaning turi Rus tilida</label>
+      <!-- Jamoa a'zosining ismi -->
+
+      <label>Xizmatning nomi Rus tilida</label>
       <v-text-field
         outlined
         v-model="nameRus"
         :counter="25"
         :rules="nameRules"
-        label="Eng yaxshi loyihaning turi Rus tilida"
+        label="xizmat nomini yozing rus tilida"
         required
         class="mt-6"
       ></v-text-field>
-      <label>Eng yaxshi loyihaning turi English tilida</label>
+      <label>Xizmatning nomi English tilida</label>
       <v-text-field
         outlined
         v-model="nameingliz"
         :counter="25"
         :rules="nameRules"
-        label="Eng yaxshi loyihaning turi English tilida"
+        label="xizmat nomini yozing ingliz tilida"
         required
         class="mt-6"
       ></v-text-field>
 
-      <hr class="danger--text hr" />
+     <hr class="hr">
 
-      <!-- Jamoa a'zosining kasbi -->
-      <label>Eng yaxshi loyihaning sarlavhasi Rus tilida</label>
+      <label>Xizmatning sarlavhasi Rus tilida </label>
       <v-text-field
         outlined
         v-model="kasbiRus"
         :counter="25"
         :rules="nameRules"
-        label="Eng yaxshi loyihaning sarlavhasi Rus tilida"
+        label="Xizmat sarlavhasini yozing Rus tilida"
         required
         class="mt-6"
       ></v-text-field>
-      <label>Eng yaxshi loyihaning sarlavhasi Ingliz tilida</label>
+      <label>Xizmatning sarlavhasi Ingliz tilida</label>
       <v-text-field
         outlined
         v-model="kasbiIngliz"
         :counter="25"
         :rules="nameRules"
-        label="Eng yaxshi loyihaning sarlavhasi Ingliz tilida"
+        label="Xizmat sarlavhasini yozing Ingliz tilida"
         required
         class="mt-6"
       ></v-text-field>
-      <hr class="danger--text hr" />
-      <label>Eng yaxshi loyihaning rasmi</label>
+
+      <hr class="hr">
+
+      <label>Xizmatning  rasmi</label>
       <v-file-input
-        label="Eng yaxshi loyihaning rasmi"
+        label="Loyihaning rasmini yuklang"
         outlined
         dense
         class="mt-6"
       ></v-file-input>
-      <hr class="danger--text hr" />
-      <label form="#">Jamoa a'zosining E-maili</label>
-      <v-text-field
-        outlined
-        v-model="email"
-        :rules="emailRules"
-        label="jamoa a'zosining E-maili"
-        required
-        class="mt-6"
-      ></v-text-field>
-      <hr class="danger--text hr" />
-      <label for="#">Eng yaxshi loyiha haqida Rus tilida</label>
+
+      <hr class="hr">
+
+      <label for="#">Xizmat haqida Rus tilida</label>
       <v-textarea
         outlined
         name="input-7-4"
-        label="Eng yaxshi loyiha haqida Rus tilida"
+        label="Xizmat haqida yozing Rus tilida"
         class="my-10"
       ></v-textarea>
-      <label>Eng yaxshi loyiha haqida Ingliz tilida</label>
+      <label>Xizmat haqida Ingliz tilida</label>
       <v-textarea
         outlined
         name="input-7-4"
-        label="Eng yaxshi loyiha haqida Ingliz tilida"
+        label="Xizmat haqida yozing Ingliz tilida"
         class="my-10"
       ></v-textarea>
       <v-btn depressed color="primary"> Yuklash </v-btn>
@@ -90,11 +85,6 @@ export default {
   data() {
     return {
       valid: true,
-      name: "",
-      nameRus: "",
-      nameIngliz: "",
-      kasbiRus: "",
-      kasbiIngliz: "",
       nameRules: [
         (v) => !!v || "Name is required",
         (v) => (v && v.length <= 15) || "Name must be less than 25 characters",
@@ -114,15 +104,15 @@ export default {
 .hr {
   height: 3px !important;
   width: 100% !important;
-  background-color: red !important;
+  background-color:red !important;
   border-radius: 5px !important;
   margin-bottom: 20px;
 }
-h1 {
+  h1{
   font-family: sans-serif;
   opacity: 0.6;
 }
-label {
+label{
   opacity: 0.8;
 }
 </style>
