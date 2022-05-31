@@ -14,7 +14,7 @@
             <th class="text-left">
               <h3>Kasbi</h3>
             </th>
-            <th class="text-left">
+            <th class="text-left text">
               <h3>Haqida</h3>
             </th>
             <th class="text-left">
@@ -23,37 +23,21 @@
           </tr>
         </thead>
         <tbody class="template_bg">
-        <tr
-          v-for="item in desserts"
-          :key="item.ru"
-        >
-          <td class="py-6"><v-img :src="item.src" max-width="50"></v-img></td>
-          <td>{{ item.eng }}</td>
-          <td>{{ item.ru }}</td>
-          <td>{{ item.about }}</td>
-          <td><v-btn
-                            outlined
-                            fab
-                            small
-                            color="indigo"
-
-                          >
-                             <v-icon>
-                           mdi-delete-outline
-                        </v-icon>
-                          </v-btn>
-                       <v-btn
-                          outlined
-                          fab
-                          small
-                          color="indigo"
-                          class="mx-5"
-                        >
-                          <v-icon>mdi-pencil</v-icon>
-                        </v-btn>
-                          </td>
-        </tr>
-      </tbody>
+          <tr v-for="item in desserts" :key="item.ru">
+            <td class="py-6"><v-img :src="item.src" max-width="50"></v-img></td>
+            <td>{{ item.eng }}</td>
+            <td>{{ item.ru }}</td>
+            <td>{{ item.about }}</td>
+            <td>
+              <v-btn outlined fab small color="indigo">
+                <v-icon> mdi-delete-outline </v-icon>
+              </v-btn>
+              <v-btn outlined fab small color="indigo" class="mx-5">
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </tbody>
       </template>
     </v-simple-table>
   </v-container>
@@ -65,7 +49,7 @@ export default {
     return {
       desserts: [
         {
-           src: "https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9",
+          src: "https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9",
           eng: "Islom Aka",
           ru: "Dasturchi",
           about: "Kuchli dasturchi",
@@ -73,7 +57,7 @@ export default {
           iconedit: "mdi-pencil-outline",
         },
         {
-           src: "https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9",
+          src: "https://www.tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Fieldhouse-10.jpg?itok=Whi8hHo9",
           eng: "Botir",
           ru: "Dasturchi",
           about: "Kuchli dasturchi",
