@@ -1,14 +1,14 @@
 <template>
   <v-container>
-   <BestProjectSee /> 
+   <TeamSee /> 
   </v-container>
 </template>
 
 <script>
-import BestProjectSee from "@/components/BestProjectSee"
+import TeamSee from "@/components/TeamSee"
 export default {
   components:{
-    BestProjectSee,
+    TeamSee,
   },
   data() {
     return {

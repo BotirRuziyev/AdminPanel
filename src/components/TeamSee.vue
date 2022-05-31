@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="dark--text py-2">Jamoa a'zolari</h1>
+    <h1 class="dark--text py-3">Jamoa a'zolari</h1>
     <v-simple-table>
       <template v-slot:default>
         <thead class="py-16 template_bg">

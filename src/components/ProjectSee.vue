@@ -25,10 +25,10 @@
           v-for="item in desserts"
           :key="item.ru"
         >
-          <td colspan="1" class="py-6"><v-img :src="item.src" max-width="50"></v-img></td>
-          <td colspan="4">{{ item.eng }}</td>
-          <td colspan="4">{{ item.ru }}</td>
-          <td colspan="1"><v-btn
+          <td class="py-6"><v-img :src="item.src" max-width="50"></v-img></td>
+          <td>{{ item.eng }}</td>
+          <td>{{ item.ru }}</td>
+          <td><v-btn
                             outlined
                             fab
                             small
