@@ -38,7 +38,7 @@
     <v-app-bar app color="white px-4">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-icon class="px-5">mdi-cog-outline</v-icon>
+      <v-icon class="px-5" @click="drawer2 = !drawer2">mdi-cog-outline</v-icon>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
           <v-menu bottom min-width="200px" rounded offset-y>
@@ -74,6 +74,48 @@
 
     <v-main>
       <router-view />
+      <v-sheet 
+          class="overflow-hidden"
+          style="position: relative;"
+      >
+
+    <v-navigation-drawer
+      v-model="drawer2"
+      fixed
+      right
+      bottom
+      temporary
+      height="100%"
+    >
+      <v-list-item color="#313a46">
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>Sozlash</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-sheet>
     </v-main>
     <v-divider></v-divider>
      <v-footer
@@ -97,11 +139,16 @@
 </template>
 
 <script>
+import Night from "@/components/Night"
 export default {
+  components:{
+    Night
+  },
   name: "App",
-
+ 
   data: () => ({
     drawer: null,
+    drawer2: null,
     user: {
       fullName: "Islombek Tadjiyev",
       role: "admin",
@@ -167,5 +214,8 @@ a {
 }
 .app {
   background-color: #fafbfe !important;
+}
+.item-content{
+  background-color: black;
 }
 </style>
