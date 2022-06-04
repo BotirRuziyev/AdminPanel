@@ -40,7 +40,7 @@
         <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark"
           >mdi-brightness-4</v-icon
         >
-        <span class="px-3">Rejimni tanlan</span>
+        <span class="px-3">Rejimni tanlang</span>
       </h3>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
