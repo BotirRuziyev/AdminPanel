@@ -26,8 +26,6 @@
         class="mt-6"
       ></v-text-field>
 
-     <hr class="hr">
-
       <label>Xizmatning sarlavhasi Rus tilida </label>
       <v-text-field
         outlined
@@ -49,8 +47,6 @@
         class="mt-6"
       ></v-text-field>
 
-      <hr class="hr">
-
       <label>Xizmatning  rasmi</label>
       <v-file-input
         label="Loyihaning rasmini yuklang"
@@ -58,8 +54,6 @@
         dense
         class="mt-6"
       ></v-file-input>
-
-      <hr class="hr">
 
       <label for="#">Xizmat haqida Rus tilida</label>
       <v-textarea

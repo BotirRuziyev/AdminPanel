@@ -105,9 +105,14 @@
           <v-list>
             <v-list-item-title>wwkem</v-list-item-title>
           </v-list>
-            <br>
-            <v-icon  @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
-            <span>Tungi rejim</span>
+            <v-list v-if="darkMode">
+              <v-icon  @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
+              <span class="px-5">Tungi rejim</span>
+            </v-list>
+            <v-list v-else>
+              <v-icon  @click="!$vuetify.theme.dark">mdi-brightness-4</v-icon>
+              <span class="px-5">Kunduzgi rejim</span>
+            </v-list>
         </v-list>
       </v-container>
     </v-navigation-drawer>
@@ -144,6 +149,7 @@ export default {
   data: () => ({
     drawer: null,
     drawer2: null,
+    darkMode: true,
     user: {
       fullName: "Islombek Tadjiyev",
       role: "admin",

@@ -26,8 +26,6 @@
         class="mt-6"
       ></v-text-field>
 
-      <hr class="danger--text hr" />
-
       <!-- Jamoa a'zosining kasbi -->
       <label>Jamoa a'zosining kasbi rus tilida</label>
       <v-text-field
@@ -49,7 +47,7 @@
         required
         class="mt-6"
       ></v-text-field>
-      <hr class="danger--text hr" />
+
       <label>Jamoa a'zosining rasmi</label>
       <v-file-input
         label="jamoa a'zosining rasmi"
@@ -57,7 +55,7 @@
         dense
         class="mt-6"
       ></v-file-input>
-      <hr class="danger--text hr" />
+
       <label form="#">Jamoa a'zosining E-maili</label>
       <v-text-field
         outlined
@@ -67,7 +65,7 @@
         required
         class="mt-6"
       ></v-text-field>
-      <hr class="danger--text hr" />
+
       <label for="#">Jamoa a'zosi haqida Rus tilida</label>
       <v-textarea
         outlined

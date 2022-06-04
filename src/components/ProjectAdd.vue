@@ -25,7 +25,6 @@
         required
         class="mt-6"
       ></v-text-field>
-
       <!-- Jamoa a'zosining kasbi -->
       <label>Loyihaning sarlavhasi Rus tilida</label>
       <v-text-field
@@ -164,6 +163,7 @@ export default {
   background-color:red !important;
   border-radius: 5px !important;
   margin-bottom: 20px;
+  /* border: 1px solid red; */
 }
   h1{
   font-family: sans-serif;

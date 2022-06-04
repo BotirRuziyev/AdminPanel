@@ -1,5 +1,5 @@
 <template>
-  <v-sheet color="#fafbfe">
+  <v-sheet>
     <v-container class="px-10">
       <h1 class="dark--text py-10">Eng yaxshi loyihani qo'shish</h1>
 
@@ -24,8 +24,6 @@
         class="mt-6"
       ></v-text-field>
 
-      <hr class="danger--text hr" />
-
       <!-- Jamoa a'zosining kasbi -->
       <label>Eng yaxshi loyihaning sarlavhasi Rus tilida</label>
       <v-text-field
@@ -47,7 +45,7 @@
         required
         class="mt-6"
       ></v-text-field>
-      <hr class="danger--text hr" />
+
       <label>Eng yaxshi loyihaning rasmi</label>
       <v-file-input
         label="Eng yaxshi loyihaning rasmi"
@@ -55,7 +53,7 @@
         dense
         class="mt-6"
       ></v-file-input>
-      <hr class="danger--text hr" />
+
       <label form="#">Jamoa a'zosining E-maili</label>
       <v-text-field
         outlined
@@ -65,7 +63,7 @@
         required
         class="mt-6"
       ></v-text-field>
-      <hr class="danger--text hr" />
+
       <label for="#">Eng yaxshi loyiha haqida Rus tilida</label>
       <v-textarea
         outlined
