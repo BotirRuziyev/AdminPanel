@@ -1,14 +1,13 @@
 <template>
   <v-app id="inspire" class="app">
-    <v-navigation-drawer v-model="drawer" app color="#313a46">
-      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#313a46">
+    <v-navigation-drawer v-model="drawer" app>
+      <v-card class="mx-auto elevation-0 mt-12" max-width="500">
         <v-list>
           <v-list-group
             v-for="item in items"
             :key="item.title"
             :prepend-icon="item.action"
             no-action
-            color="white-icon"
             class="white-icon"
           >
             <template v-slot:activator>
@@ -89,42 +88,8 @@
           </v-list-item>
 
           <v-divider></v-divider>
-
-<<<<<<< HEAD
-      <v-divider></v-divider>
-
-      <v-container>
-        <v-list
-        class="px-5"
-        >
-          <v-list>
-            <v-list-item-title>wwkem</v-list-item-title>
-          </v-list>
-            <v-list v-if="darkMode">
-              <v-icon  @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-5">Tungi rejim</span>
-            </v-list>
-            <v-list v-else>
-              <v-icon  @click="!$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-5">Kunduzgi rejim</span>
-            </v-list>
-        </v-list>
-      </v-container>
-    </v-navigation-drawer>
-  </v-sheet>
-=======
-          <v-container>
-            <v-switch
-              v-model="$vuetify.theme.dark"
-              hint="This toggles the global state of the Vuetify theme"
-              inset
-              label="Vuetify Theme Dark"
-              persistent-hint
-            ></v-switch>
-          </v-container>
         </v-navigation-drawer>
       </v-sheet>
->>>>>>> 1465fd08ccf79f092303407fad5fa40a38c08b07
     </v-main>
     <v-divider></v-divider>
     <v-footer color="#fafbfe" padless class="border-top">
@@ -154,11 +119,7 @@ export default {
   data: () => ({
     drawer: null,
     drawer2: null,
-<<<<<<< HEAD
-    darkMode: true,
-=======
     items: ["One", "Two", "Three"],
->>>>>>> 1465fd08ccf79f092303407fad5fa40a38c08b07
     user: {
       fullName: "Islombek Tadjiyev",
       role: "admin",
@@ -220,14 +181,5 @@ a {
 }
 .border-container {
   width: 60px !important;
-}
-.app {
-  background-color: #fafbfe !important;
-}
-.item-content {
-  background-color: black;
-}
-.green2 {
-  background-color: #313a46;
 }
 </style>

@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style scoped>
-h1{
+h1 {
   font-family: sans-serif;
   opacity: 0.6;
 }
