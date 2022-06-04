@@ -33,7 +33,6 @@
         </v-list>
       </v-card>
     </v-navigation-drawer>
-
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
@@ -41,7 +40,7 @@
         <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark"
           >mdi-brightness-4</v-icon
         >
-        <span class="px-3">Rejimni tanlang</span>
+        <span class="px-3">Rejimni tanlan</span>
       </h3>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
