@@ -1,5 +1,5 @@
 <template>
-  <v-sheet color="#fafbfe">
+  <v-sheet>
     <v-container class="px-10">
     <h1>Kompanya haqida</h1>
     <form class="mt-16">

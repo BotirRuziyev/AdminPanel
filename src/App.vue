@@ -1,14 +1,13 @@
 <template>
   <v-app id="inspire" class="app">
-    <v-navigation-drawer v-model="drawer" app color="#313a46">
-      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#313a46">
+    <v-navigation-drawer v-model="drawer" app color="#363636">
+      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#363636">
         <v-list>
           <v-list-group
             v-for="item in items"
             :key="item.title"
             :prepend-icon="item.action"
             no-action
-            color="white-icon"
             class="white-icon"
           >
             <template v-slot:activator>
@@ -35,16 +34,19 @@
       </v-card>
     </v-navigation-drawer>
 
-    <v-app-bar app color="white px-4">
+    <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-icon class="px-5" @click="drawer2 = !drawer2">mdi-cog-outline</v-icon>
+       <h3>
+              <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
+              <span class="px-3">Rejimni tanlang</span>
+            </h3>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
           <v-menu bottom min-width="200px" rounded offset-y>
             <template v-slot:activator="{ on }">
               <v-btn icon x-large v-on="on">
-                <v-avatar color="brown" size="48">
+                <v-avatar size="48">
                   <v-img src="./assets/avatar-1.jpg"></v-img>
                 </v-avatar>
               </v-btn>
@@ -52,7 +54,7 @@
             <v-card>
               <v-list-item-content class="justify-center">
                 <div class="mx-auto text-center">
-                  <v-avatar color="brown">
+                  <v-avatar>
                     <v-img src="./assets/avatar-1.jpg"></v-img>
                   </v-avatar>
                   <h3 class="py-3">{{ user.fullName }}</h3>
@@ -74,23 +76,29 @@
 
     <v-main>
       <router-view />
-      <v-sheet class="overflow-hidden" style="position: relative">
-        <v-navigation-drawer v-model="drawer2" fixed right temporary>
-          <v-list-item class="green2">
-            <v-list-item-avatar>
-              <v-img
-                src="https://randomuser.me/api/portraits/men/78.jpg"
-              ></v-img>
-            </v-list-item-avatar>
+      <v-sheet 
+          class="overflow-hidden"
+          style="position: relative;"
+      >
 
-            <v-list-item-content>
-              <v-list-item-title class="white--text">Sozlash</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+    <v-navigation-drawer
+      v-model="drawer2"
+      fixed
+      right
+      bottom
+      temporary
+      height="100%"
+    >
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
 
-          <v-divider></v-divider>
+        <v-list-item-content>
+          <v-list-item-title>Sozlash</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-<<<<<<< HEAD
       <v-divider></v-divider>
 
       <v-container>
@@ -98,67 +106,50 @@
         class="px-5"
         >
           <v-list>
-            <v-list-item-title>wwkem</v-list-item-title>
+            <v-list-item-title>Boshqaruv panelini qorong'i va yorug' holatga o'tkazish.</v-list-item-title>
           </v-list>
-            <v-list v-if="darkMode">
-              <v-icon  @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-5">Tungi rejim</span>
-            </v-list>
-            <v-list v-else>
-              <v-icon  @click="!$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-5">Kunduzgi rejim</span>
+            <v-list>
+              <v-icon  @click="darkMode">mdi-brightness-4</v-icon>
+              <span class="px-5" v-if="darkmode">Tungi rejim</span>
+              <span class="px-5" v-else>Kunduzgi rejim</span>
             </v-list>
         </v-list>
       </v-container>
     </v-navigation-drawer>
   </v-sheet>
-=======
-          <v-container>
-            <v-switch
-              v-model="$vuetify.theme.dark"
-              hint="This toggles the global state of the Vuetify theme"
-              inset
-              label="Vuetify Theme Dark"
-              persistent-hint
-            ></v-switch>
-          </v-container>
-        </v-navigation-drawer>
-      </v-sheet>
->>>>>>> 1465fd08ccf79f092303407fad5fa40a38c08b07
     </v-main>
     <v-divider></v-divider>
-    <v-footer color="#fafbfe" padless class="border-top">
-      <v-row justify="center" no-gutters>
-        <v-col class="py-4 text-center dark--text" cols="12">
-          2022 © Tasnim - tasnim.uz
-        </v-col>
-      </v-row>
-    </v-footer>
+     <v-footer
+    padless
+    class="border-top"
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      <v-col
+        class="py-4 text-center dark--text"
+        cols="12"
+      >
+         2022 © Tasnim - tasnim.uz      
+      </v-col>
+    </v-row>
+  </v-footer>
   </v-app>
 </template>
 
 <script>
-import Night from "@/components/Night";
+import Night from "@/components/Night"
 export default {
-  components: {
-    Night,
-  },
-  props: {
-    attrs: {
-      type: Object,
-      default: () => ({}),
-    },
+  components:{
+    Night
   },
   name: "App",
-
+ 
   data: () => ({
     drawer: null,
     drawer2: null,
-<<<<<<< HEAD
-    darkMode: true,
-=======
-    items: ["One", "Two", "Three"],
->>>>>>> 1465fd08ccf79f092303407fad5fa40a38c08b07
+    darkmode: true,
     user: {
       fullName: "Islombek Tadjiyev",
       role: "admin",
@@ -211,6 +202,12 @@ export default {
       },
     ],
   }),
+  methods: {
+    darkMode(){
+      $vuetify.theme.dark = !$vuetify.theme.dark
+      this.darkmode = !this.darkmode
+    }
+  },
 };
 </script>
 
@@ -220,14 +217,5 @@ a {
 }
 .border-container {
   width: 60px !important;
-}
-.app {
-  background-color: #fafbfe !important;
-}
-.item-content {
-  background-color: black;
-}
-.green2 {
-  background-color: #313a46;
 }
 </style>

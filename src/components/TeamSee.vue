@@ -3,7 +3,7 @@
     <h1 class="dark--text py-3">Jamoa a'zolari</h1>
     <v-simple-table>
       <template v-slot:default>
-        <thead class="py-16 template_bg">
+        <thead class="py-16">
           <tr>
             <th class="text-left font-weight-medium h6">
               <h3>Rasm</h3>
@@ -22,7 +22,7 @@
             </th>
           </tr>
         </thead>
-        <tbody class="template_bg">
+        <tbody>
           <tr v-for="item in desserts" :key="item.ru">
             <td class="py-6"><v-img :src="item.src" max-width="50"></v-img></td>
             <td>{{ item.eng }}</td>

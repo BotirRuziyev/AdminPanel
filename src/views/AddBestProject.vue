@@ -109,13 +109,6 @@ export default {
 </script>
 
 <style>
-.hr {
-  height: 3px !important;
-  width: 100% !important;
-  background-color: red !important;
-  border-radius: 5px !important;
-  margin-bottom: 20px;
-}
 h1 {
   font-family: sans-serif;
   opacity: 0.6;

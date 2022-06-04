@@ -3,8 +3,6 @@
     <v-container class="px-10">
       <h1 class="dark--text py-10">Jamoa qo'shish</h1>
 
-      <!-- Jamoa a'zosining ismi -->
-
       <label>Jamoa a'zosining ismi rus tilida</label>
       <v-text-field
         outlined
@@ -111,13 +109,6 @@ export default {
 </script>
 
 <style>
-.hr {
-  height: 3px !important;
-  width: 100% !important;
-  background-color:red !important;
-  border-radius: 5px !important;
-  margin-bottom: 20px;
-}
   h1{
   font-family: sans-serif;
   opacity: 0.6;

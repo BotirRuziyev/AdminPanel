@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <TeamSee :style="{ background: $vuetify.theme.themes[theme].background }" />
+    <TeamSee />
   </v-container>
 </template>
 
@@ -13,12 +13,8 @@ export default {
   data() {
     return {};
   },
-  computed: {
-    theme() {
-      return this.$vuetify.theme.dark ? "dark" : "light";
-    },
-  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
