@@ -9,7 +9,6 @@
         justify="center"
       >
         <v-btn
-          color="pink"
           dark
           @click.stop="drawer = !drawer"
         >

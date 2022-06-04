@@ -1,14 +1,13 @@
 <template>
   <v-app id="inspire" class="app">
-    <v-navigation-drawer v-model="drawer" app color="#313a46">
-      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#313a46">
+    <v-navigation-drawer v-model="drawer" app color="#363636">
+      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#363636">
         <v-list>
           <v-list-group
             v-for="item in items"
             :key="item.title"
             :prepend-icon="item.action"
             no-action
-            color="white-icon"
             class="white-icon"
           >
             <template v-slot:activator>
@@ -35,7 +34,7 @@
       </v-card>
     </v-navigation-drawer>
 
-    <v-app-bar app color="white px-4">
+    <v-app-bar app color=" px-4">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-icon class="px-5" @click="drawer2 = !drawer2">mdi-cog-outline</v-icon>
@@ -44,7 +43,7 @@
           <v-menu bottom min-width="200px" rounded offset-y>
             <template v-slot:activator="{ on }">
               <v-btn icon x-large v-on="on">
-                <v-avatar color="brown" size="48">
+                <v-avatar size="48">
                   <v-img src="./assets/avatar-1.jpg"></v-img>
                 </v-avatar>
               </v-btn>
@@ -52,7 +51,7 @@
             <v-card>
               <v-list-item-content class="justify-center">
                 <div class="mx-auto text-center">
-                  <v-avatar color="brown">
+                  <v-avatar>
                     <v-img src="./assets/avatar-1.jpg"></v-img>
                   </v-avatar>
                   <h3 class="py-3">{{ user.fullName }}</h3>
@@ -99,27 +98,23 @@
 
       <v-divider></v-divider>
 
-      <v-list dense>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
+      <v-container>
+        <v-list
+        class="px-5"
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+          <v-list>
+            <v-list-item-title>wwkem</v-list-item-title>
+          </v-list>
+            <br>
+            <v-icon  @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
+            <span>Tungi rejim</span>
+        </v-list>
+      </v-container>
     </v-navigation-drawer>
   </v-sheet>
     </v-main>
     <v-divider></v-divider>
      <v-footer
-    color="#fafbfe"
     padless
     class="border-top"
   >
@@ -211,9 +206,6 @@ a {
 }
 .border-container {
   width: 60px !important;
-}
-.app {
-  background-color: #fafbfe !important;
 }
 .item-content{
   background-color: black;

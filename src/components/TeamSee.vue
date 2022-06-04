@@ -71,7 +71,8 @@ export default {
 </script>
 
 <style scoped>
-.template_bg {
-  background-color: #fafbfe !important;
+h1{
+  font-family: sans-serif;
+  opacity: 0.6;
 }
 </style>
