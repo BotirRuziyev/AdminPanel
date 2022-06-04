@@ -1,23 +1,24 @@
 <template>
   <v-container>
-   <TeamSee /> 
+    <TeamSee :style="{ background: $vuetify.theme.themes[theme].background }" />
   </v-container>
 </template>
 
 <script>
-import TeamSee from "@/components/TeamSee"
+import TeamSee from "@/components/TeamSee";
 export default {
-  components:{
+  components: {
     TeamSee,
   },
   data() {
-    return {
-
-    };
+    return {};
+  },
+  computed: {
+    theme() {
+      return this.$vuetify.theme.dark ? "dark" : "light";
+    },
   },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
