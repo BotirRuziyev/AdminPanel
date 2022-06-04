@@ -1,5 +1,5 @@
 <template>
-  <v-sheet color="#fafbfe">
+  <v-sheet>
     <v-container class="px-10">
       <h1 class="dark--text py-10">Jamoa qo'shish</h1>
 

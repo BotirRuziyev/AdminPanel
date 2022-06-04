@@ -16,7 +16,7 @@
           </th>
         </tr>
       </thead>
-      <tbody class="template_bg">
+      <tbody>
         <tr
           v-for="item in desserts"
           :key="item.ru"
@@ -72,9 +72,6 @@
 </script>
 
 <style scoped>
-.template_bg{
-    background-color: #fafbfe !important;
-}
 h1{
   font-family: sans-serif;
   opacity: 0.6;

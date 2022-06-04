@@ -1,5 +1,5 @@
 <template>
-<v-sheet color="#fafbfe" height="100%">
+<v-sheet height="100%">
     <v-container class="px-10">
         <Aboutsee />
    </v-container>
