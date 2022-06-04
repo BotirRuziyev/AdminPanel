@@ -74,81 +74,63 @@
 
     <v-main>
       <router-view />
-      <v-sheet 
-          class="overflow-hidden"
-          style="position: relative;"
-      >
+      <v-sheet class="overflow-hidden" style="position: relative">
+        <v-navigation-drawer v-model="drawer2" fixed right temporary>
+          <v-list-item class="green2">
+            <v-list-item-avatar>
+              <v-img
+                src="https://randomuser.me/api/portraits/men/78.jpg"
+              ></v-img>
+            </v-list-item-avatar>
 
-    <v-navigation-drawer
-      v-model="drawer2"
-      fixed
-      right
-      bottom
-      temporary
-      height="100%"
-    >
-      <v-list-item color="#313a46">
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title class="white--text">Sozlash</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-        <v-list-item-content>
-          <v-list-item-title>Sozlash</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+          <v-divider></v-divider>
 
-      <v-divider></v-divider>
-
-      <v-list dense>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-  </v-sheet>
+          <v-container>
+            <v-switch
+              v-model="$vuetify.theme.dark"
+              hint="This toggles the global state of the Vuetify theme"
+              inset
+              label="Vuetify Theme Dark"
+              persistent-hint
+            ></v-switch>
+          </v-container>
+        </v-navigation-drawer>
+      </v-sheet>
     </v-main>
     <v-divider></v-divider>
-     <v-footer
-    color="#fafbfe"
-    padless
-    class="border-top"
-  >
-    <v-row
-      justify="center"
-      no-gutters
-    >
-      <v-col
-        class="py-4 text-center dark--text"
-        cols="12"
-      >
-         2022 © Tasnim - tasnim.uz      
-      </v-col>
-    </v-row>
-  </v-footer>
+    <v-footer color="#fafbfe" padless class="border-top">
+      <v-row justify="center" no-gutters>
+        <v-col class="py-4 text-center dark--text" cols="12">
+          2022 © Tasnim - tasnim.uz
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import Night from "@/components/Night"
+import Night from "@/components/Night";
 export default {
-  components:{
-    Night
+  components: {
+    Night,
+  },
+  props: {
+    attrs: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   name: "App",
- 
+
   data: () => ({
     drawer: null,
     drawer2: null,
+    items: ["One", "Two", "Three"],
     user: {
       fullName: "Islombek Tadjiyev",
       role: "admin",
@@ -201,7 +183,6 @@ export default {
       },
     ],
   }),
-  computed: {},
 };
 </script>
 
@@ -215,7 +196,10 @@ a {
 .app {
   background-color: #fafbfe !important;
 }
-.item-content{
+.item-content {
   background-color: black;
+}
+.green2 {
+  background-color: #313a46;
 }
 </style>
