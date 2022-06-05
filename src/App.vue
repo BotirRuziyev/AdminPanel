@@ -8,7 +8,6 @@
             :key="item.title"
             :prepend-icon="item.action"
             no-action
-            class="white-icon"
           >
             <template v-slot:activator>
               <v-list-item-content>
@@ -44,6 +43,7 @@
         <span class="px-3" v-if="!$vuetify.theme.dark">tungi rejim</span>
         <span class="px-3" v-else>kunduzgi rejim</span>
       </h3>
+
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
           <v-menu bottom min-width="200px" rounded offset-y>
@@ -132,11 +132,7 @@
 </template>
 
 <script>
-import Night from "@/components/Night";
 export default {
-  components: {
-    Night,
-  },
   name: "App",
 
   data: () => ({

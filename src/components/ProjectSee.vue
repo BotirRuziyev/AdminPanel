@@ -25,10 +25,10 @@
             <td>{{ item.eng }}</td>
             <td>{{ item.ru }}</td>
             <td>
-              <v-btn outlined fab small color="indigo">
+              <v-btn outlined fab small color="error">
                 <v-icon> mdi-delete-outline </v-icon>
               </v-btn>
-              <v-btn outlined fab small color="indigo" class="mx-5">
+              <v-btn outlined fab small color="warning" class="mx-5">
                 <v-icon>mdi-pencil</v-icon>
               </v-btn>
             </td>

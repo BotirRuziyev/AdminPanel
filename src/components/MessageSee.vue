@@ -21,7 +21,7 @@
           </th>
         </tr>
       </thead>
-      <tbody class="template_bg">
+      <tbody>
         <tr
           v-for="item in desserts"
           :key="item.ru"

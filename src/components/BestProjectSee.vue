@@ -35,7 +35,7 @@
                             outlined
                             fab
                             small
-                            color="indigo"
+                            color="error"
 
                           >
                              <v-icon>
@@ -46,7 +46,7 @@
                           outlined
                           fab
                           small
-                          color="indigo"
+                          color="warning"
                           class="mx-5"
                         >
                           <v-icon>mdi-pencil</v-icon>
