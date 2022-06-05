@@ -37,10 +37,13 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-       <h3>
-              <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-3">Rejimni tanlang</span>
-            </h3>
+      <h3>
+        <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+          >mdi-brightness-4</v-icon
+        >
+        <span class="px-3" v-if="!$vuetify.theme.dark">tungi rejim</span>
+        <span class="px-3" v-else>kunduzgi rejim</span>
+      </h3>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
           <v-menu bottom min-width="200px" rounded offset-y>
@@ -76,76 +79,66 @@
 
     <v-main>
       <router-view />
-      <v-sheet 
-          class="overflow-hidden"
-          style="position: relative;"
-      >
-
-    <v-navigation-drawer
-      v-model="drawer2"
-      fixed
-      right
-      bottom
-      temporary
-      height="100%"
-    >
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>Sozlash</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-container>
-        <v-list
-        class="px-5"
+      <v-sheet class="overflow-hidden" style="position: relative">
+        <v-navigation-drawer
+          v-model="drawer2"
+          fixed
+          right
+          bottom
+          temporary
+          height="100%"
         >
-          <v-list>
-            <v-list-item-title>Boshqaruv panelini qorong'i va yorug' holatga o'tkazish.</v-list-item-title>
-          </v-list>
-            <v-list>
-              <v-icon  @click="darkMode">mdi-brightness-4</v-icon>
-              <span class="px-5" v-if="darkmode">Tungi rejim</span>
-              <span class="px-5" v-else>Kunduzgi rejim</span>
+          <v-list-item>
+            <v-list-item-avatar>
+              <v-img
+                src="https://randomuser.me/api/portraits/men/78.jpg"
+              ></v-img>
+            </v-list-item-avatar>
+
+            <v-list-item-content>
+              <v-list-item-title>Sozlash</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-container>
+            <v-list class="px-5">
+              <v-list>
+                <v-list-item-title
+                  >Boshqaruv panelini qorong'i va yorug' holatga
+                  o'tkazish.</v-list-item-title
+                >
+              </v-list>
+              <v-list>
+                <v-icon @click="darkMode">mdi-brightness-4</v-icon>
+                <span class="px-5" v-if="darkmode">Tungi rejim</span>
+                <span class="px-5" v-else>Kunduzgi rejim</span>
+              </v-list>
             </v-list>
-        </v-list>
-      </v-container>
-    </v-navigation-drawer>
-  </v-sheet>
+          </v-container>
+        </v-navigation-drawer>
+      </v-sheet>
     </v-main>
     <v-divider></v-divider>
-     <v-footer
-    padless
-    class="border-top"
-  >
-    <v-row
-      justify="center"
-      no-gutters
-    >
-      <v-col
-        class="py-4 text-center dark--text"
-        cols="12"
-      >
-         2022 © Tasnim - tasnim.uz      
-      </v-col>
-    </v-row>
-  </v-footer>
+    <v-footer padless class="border-top">
+      <v-row justify="center" no-gutters>
+        <v-col class="py-4 text-center dark--text" cols="12">
+          2022 © Tasnim - tasnim.uz
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import Night from "@/components/Night"
+import Night from "@/components/Night";
 export default {
-  components:{
-    Night
+  components: {
+    Night,
   },
   name: "App",
- 
+
   data: () => ({
     drawer: null,
     drawer2: null,
@@ -164,11 +157,11 @@ export default {
         ],
       },
       {
-        action: "mdi-silverware-fork-knife white--text",
-        title: "Loyihalar",
+        action: "mdi-rotate-3d white--text",
+        title: "3D Modellar",
         items: [
-          { title: "Loyiha qo'shish", to: "/addproject" },
-          { title: "Loyihalar", to: "/project" },
+          { title: "3D Model qo'shish", to: "/addproject" },
+          { title: "3D Modellar", to: "/project" },
         ],
       },
       {
@@ -188,8 +181,8 @@ export default {
         ],
       },
       {
-        action: "mdi-bottle-tonic-plus white--text",
-        title: "Eng yaxshi loyihalar",
+        action: "mdi-video-3d white--text",
+        title: "Eng yaxshi 3D modellar",
         items: [
           { title: "Eng yaxshi loyihalar qo'shish", to: "/addbestproject" },
           { title: "Eng yaxshi loyihalar", to: "/bestproject" },
@@ -203,10 +196,10 @@ export default {
     ],
   }),
   methods: {
-    darkMode(){
-      $vuetify.theme.dark = !$vuetify.theme.dark
-      this.darkmode = !this.darkmode
-    }
+    darkMode() {
+      $vuetify.theme.dark = !$vuetify.theme.dark;
+      this.darkmode = !this.darkmode;
+    },
   },
 };
 </script>
