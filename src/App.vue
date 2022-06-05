@@ -8,7 +8,6 @@
             :key="item.title"
             :prepend-icon="item.action"
             no-action
-            class="white-icon"
           >
             <template v-slot:activator>
               <v-list-item-content>
@@ -38,9 +37,9 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
        <h3>
-              <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
-              <span class="px-3">Rejimni tanlang</span>
-            </h3>
+          <v-icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">mdi-brightness-4</v-icon>
+          <span class="px-3">Rejimni tanlang</span>
+        </h3>
       <v-container style="height: 300px width: 300px" class="border-container">
         <v-row justify="center">
           <v-menu bottom min-width="200px" rounded offset-y>
@@ -76,47 +75,6 @@
 
     <v-main>
       <router-view />
-      <v-sheet 
-          class="overflow-hidden"
-          style="position: relative;"
-      >
-
-    <v-navigation-drawer
-      v-model="drawer2"
-      fixed
-      right
-      bottom
-      temporary
-      height="100%"
-    >
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>Sozlash</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-container>
-        <v-list
-        class="px-5"
-        >
-          <v-list>
-            <v-list-item-title>Boshqaruv panelini qorong'i va yorug' holatga o'tkazish.</v-list-item-title>
-          </v-list>
-            <v-list>
-              <v-icon  @click="darkMode">mdi-brightness-4</v-icon>
-              <span class="px-5" v-if="darkmode">Tungi rejim</span>
-              <span class="px-5" v-else>Kunduzgi rejim</span>
-            </v-list>
-        </v-list>
-      </v-container>
-    </v-navigation-drawer>
-  </v-sheet>
     </v-main>
     <v-divider></v-divider>
      <v-footer
@@ -139,11 +97,7 @@
 </template>
 
 <script>
-import Night from "@/components/Night"
 export default {
-  components:{
-    Night
-  },
   name: "App",
  
   data: () => ({

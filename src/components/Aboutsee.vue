@@ -3,7 +3,7 @@
   <h1 class="py-3">Biz haqimizda</h1>
      <v-simple-table>
     <template v-slot:default>
-      <thead class="py-16 template_bg" >
+      <thead class="py-16" >
         <tr>
           <th class="text-left font-weight-medium h6">
             <h3>Ma'lumot ru</h3>
@@ -27,7 +27,7 @@
                             outlined
                             fab
                             small
-                            color="indigo"
+                            color="error"
 
                           >
                              <v-icon>
@@ -38,7 +38,7 @@
                           outlined
                           fab
                           small
-                          color="indigo"
+                          color="warning"
                           class="mx-5"
                         >
                           <v-icon>mdi-pencil</v-icon>
