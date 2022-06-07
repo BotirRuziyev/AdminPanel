@@ -8,6 +8,7 @@
 
 <script>
 import Aboutsee from "@/components/Aboutsee"
+
 export default {
     components:{
         Aboutsee,

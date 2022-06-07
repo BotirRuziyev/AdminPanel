@@ -79,46 +79,6 @@
 
     <v-main>
       <router-view />
-      <v-sheet class="overflow-hidden" style="position: relative">
-        <v-navigation-drawer
-          v-model="drawer2"
-          fixed
-          right
-          bottom
-          temporary
-          height="100%"
-        >
-          <v-list-item>
-            <v-list-item-avatar>
-              <v-img
-                src="https://randomuser.me/api/portraits/men/78.jpg"
-              ></v-img>
-            </v-list-item-avatar>
-
-            <v-list-item-content>
-              <v-list-item-title>Sozlash</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-divider></v-divider>
-
-          <v-container>
-            <v-list class="px-5">
-              <v-list>
-                <v-list-item-title
-                  >Boshqaruv panelini qorong'i va yorug' holatga
-                  o'tkazish.</v-list-item-title
-                >
-              </v-list>
-              <v-list>
-                <v-icon @click="darkMode">mdi-brightness-4</v-icon>
-                <span class="px-5" v-if="darkmode">Tungi rejim</span>
-                <span class="px-5" v-else>Kunduzgi rejim</span>
-              </v-list>
-            </v-list>
-          </v-container>
-        </v-navigation-drawer>
-      </v-sheet>
     </v-main>
     <v-divider></v-divider>
     <v-footer padless class="border-top">

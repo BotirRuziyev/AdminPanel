@@ -6,6 +6,9 @@
       <thead class="py-16" >
         <tr>
           <th class="text-left font-weight-medium h6">
+            <h3>Rasm</h3>
+          </th>
+          <th class="text-left font-weight-medium h6">
             <h3>Ma'lumot ru</h3>
           </th>
           <th class="text-left">
@@ -18,17 +21,17 @@
       </thead>
       <tbody>
         <tr
-          v-for="item in desserts"
-          :key="item.ru"
+        v-for="item of data" :key="item.id"
         >
-          <td class="py-8">{{ item.eng }}</td>
-          <td>{{ item.ru }}</td>
+          <td class="py-8"><v-img :src="`/uploads/about/${item.image}`" max-width="50"></v-img></td>
+          <td>{{ item.name.ru }}</td>
+          <td>{{ item.name.en }}</td>
           <td><v-btn
                             outlined
                             fab
                             small
                             color="error"
-
+                            @click="deleteId(item._id)"
                           >
                              <v-icon>
                            mdi-delete-outline
@@ -40,10 +43,13 @@
                           small
                           color="warning"
                           class="mx-5"
+                          to="/aboutedit"
+                          @click="PutId(item._id)"
                         >
                           <v-icon>mdi-pencil</v-icon>
+                          {{Putid}}
                         </v-btn>
-                          </td>
+                        </td>
         </tr>
       </tbody>
     </template>
@@ -55,19 +61,40 @@
   export default {
     data () {
       return {
-        desserts: [
-          {
-            eng: 'Frozen Yogurt',
-            ru: "Замерзший йогурт",
-          },
-          {
-            eng: 'Frozen Yogurt',
-            ru: 'Замерзший йогурт',
-          },
-          
-        ],
+            data: null,
+            Putid: null,
       }
     },
+    methods:{
+       deleteId(id){
+         this.axios.delete(`http://localhost:2004/about/delete/${id}`)
+         .then(res => {
+          window.location.reload()
+        })
+        .catch(err => {
+          console.log(err);
+        })
+       },
+
+       PutId(id){
+           this.Putid = id
+
+           this.$emit("Putemit", this.Putid)
+       }
+    },
+    mounted () {
+
+        this.axios.get("http://localhost:2004/about/all")
+        .then(res => {
+          console.log(res);
+          this.data = res.data
+        })
+        .catch(err => {
+          console.log(err);
+        })
+
+        PutId()
+    }
   }
 </script>
 
