@@ -66,7 +66,7 @@ const routes = [
     component: () => import('../views/SeeMessage.vue')
   },
   {
-    path: '/aboutedit',
+    path: '/aboutedit/:id',
     name: 'aboutedit',
     component: () => import('../views/AboutEdit.vue')
   },

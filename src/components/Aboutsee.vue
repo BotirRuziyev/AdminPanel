@@ -23,7 +23,7 @@
         <tr
         v-for="item of data" :key="item.id"
         >
-          <td class="py-8"><v-img :src="`/uploads/about/${item.image}`" max-width="50"></v-img></td>
+          <td class="py-8"><img :src="`http://localhost:2004/public/uploads/about/${item.image}`" alt="Rasm bor" /></td>
           <td>{{ item.name.ru }}</td>
           <td>{{ item.name.en }}</td>
           <td><v-btn
@@ -43,11 +43,9 @@
                           small
                           color="warning"
                           class="mx-5"
-                          to="/aboutedit"
-                          @click="PutId(item._id)"
+                          :to="`/aboutedit/${item._id}`"
                         >
                           <v-icon>mdi-pencil</v-icon>
-                          {{Putid}}
                         </v-btn>
                         </td>
         </tr>
@@ -62,7 +60,6 @@
     data () {
       return {
             data: null,
-            Putid: null,
       }
     },
     methods:{
@@ -75,12 +72,6 @@
           console.log(err);
         })
        },
-
-       PutId(id){
-           this.Putid = id
-
-           this.$emit("Putemit", this.Putid)
-       }
     },
     mounted () {
 
@@ -88,12 +79,11 @@
         .then(res => {
           console.log(res);
           this.data = res.data
+          console.log(this.data.image,);
         })
         .catch(err => {
           console.log(err);
         })
-
-        PutId()
     }
   }
 </script>
