@@ -7,7 +7,7 @@
       <form class="mt-16">
         <label style="width: 100%;">Kompanya haqida Taxrirlash Rus tilida</label>
         <v-textarea
-         v-model="data.name.ru"
+         v-model="data2.name.ru"
           label="Kompanya haqida taxrirlang Rus tilida"
           outlined
           name="input-7-4"
@@ -15,13 +15,18 @@
         ></v-textarea>
         <label style="width: 100%;">Kompanya haqida Taxrirlash Ingliz tilida</label>
         <v-textarea
-         v-model="data.name.en"
+         v-model="data2.name.en"
           label="Kompanya haqida taxrirlang Ingliz tilida"
           outlined
           name="input-7-4"
           class="mt-7"
         ></v-textarea>
-        <v-btn depressed color="primary" class="mt-16 mb-6" @click="aboutAdd">TAxrirlashni Yuklash </v-btn>
+        <label style="width: 100%;">Loyihaning rasmini Taxrirlash</label>
+      <input type="file" @change="selectFile" placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
+        outlined
+        dense
+        class="mt-6">
+        <v-btn depressed color="primary" class="mt-16 mb-6" @click="aboutAdd">Taxrirlashni Yuklash </v-btn>
       </form>
     </v-container>
   </v-sheet>
@@ -34,7 +39,14 @@ data(){
          data: {
            nameen:null,
            nameru:null,
-         },  
+         },
+         data2:{
+           name: {
+             ru:null,
+             en:null,
+           }
+         },
+         image: null,
     }
   },
   computed:{
@@ -43,8 +55,14 @@ data(){
      },
   },
   methods:{
+    selectFile(event){
+         this.image = event.target.files[0];
+         console.log(this.image);
+     },
     aboutAdd(){
-
+      this.data.nameru = this.data2.name.ru
+      this.data.nameen = this.data2.name.en
+      
       this.axios.put(`http://localhost:2004/about/putinfo/${this.aboutId}`, this.data)
       .then((res) => {
           console.log(res, "Chiqdi");
@@ -53,8 +71,20 @@ data(){
       .catch((err) =>{
         console.log(err);
       })
+
+      const fd = new FormData();
+       fd.append("image", this.image, this.image.name);
+
+       this.axios.put(`http://localhost:2004/about/putimage/${this.aboutId}`, fd)
+       .then(res => {
+         console.log("img ketdi");
+         window.location.reload()
+       })
+       .catch(err => {
+         console.log("ketmadi");
+       })
     },
-     
+
      
     
   },
@@ -62,9 +92,8 @@ data(){
       this.axios.get("http://localhost:2004/about/all")
         .then(res => {
           let result = res.data;
-          console.log(result);
           const d = result.find(item => item._id == this.aboutId)
-          this.data = d
+          this.data2 = d
         })
         .catch(err => {
           console.log(err);

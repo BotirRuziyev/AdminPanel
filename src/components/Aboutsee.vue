@@ -23,7 +23,7 @@
         <tr
         v-for="item of data" :key="item.id"
         >
-          <td class="py-8"><img :src="`http://localhost:2004/public/uploads/about/${item.image}`" alt="Rasm bor" /></td>
+          <td class="py-8"><v-img  :src="`http://localhost:2004/uploads/about/${item.image}`" alt="Rasm bor" max-width="50px" max-height="50px"> </v-img></td>
           <td>{{ item.name.ru }}</td>
           <td>{{ item.name.en }}</td>
           <td><v-btn
@@ -79,7 +79,6 @@
         .then(res => {
           console.log(res);
           this.data = res.data
-          console.log(this.data.image,);
         })
         .catch(err => {
           console.log(err);
