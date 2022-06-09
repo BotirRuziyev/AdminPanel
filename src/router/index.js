@@ -70,6 +70,11 @@ const routes = [
     name: 'aboutedit',
     component: () => import('../views/AboutEdit.vue')
   },
+  {
+    path: '/3dmodulsedit/:id',
+    name: '3dmodulsedit',
+    component: () => import('../views/3DmodulsEdit.vue')
+  },
 ]
 
 const router = new VueRouter({

@@ -22,10 +22,10 @@
           class="mt-7"
         ></v-textarea>
         <label style="width: 100%;">Loyihaning rasmini Taxrirlash</label>
-      <input type="file" @change="selectFile" placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
+      <input type="file" multiple @change="selectFile" placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
         outlined
         dense
-        class="mt-6">
+        class="mt-6" >
         <v-btn depressed color="primary" class="mt-16 mb-6" @click="aboutAdd">Taxrirlashni Yuklash </v-btn>
       </form>
     </v-container>
@@ -56,7 +56,7 @@ data(){
   },
   methods:{
     selectFile(event){
-         this.image = event.target.files[0];
+         this.image = event.target.files;
          console.log(this.image);
      },
     aboutAdd(){
@@ -73,8 +73,12 @@ data(){
       })
 
       const fd = new FormData();
-       fd.append("image", this.image, this.image.name);
 
+      for(let item of Object.keys(this.image)){
+          fd.append("image", this.image[item]);
+
+      }
+       
        this.axios.put(`http://localhost:2004/about/putimage/${this.aboutId}`, fd)
        .then(res => {
          console.log("img ketdi");

@@ -1,8 +1,8 @@
 <template>
 <v-sheet height="100%">
-    <v-container class="px-10">
+    <div class="px-10">
         <Aboutsee />
-   </v-container>
+   </div>
 </v-sheet>
 </template>
 
