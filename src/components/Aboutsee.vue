@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="py-10">Biz haqimizda</h1>
-    <div class="d-none">{{ data }}</div>
+    <div class="d-none">
+      {{data}}
+    </div>
     <v-text-field
       v-model="search"
       append-icon="mdi-magnify"
@@ -12,9 +14,9 @@
     ></v-text-field>
 
     <v-row class="py-10">
-      <v-col cols="12" md="6" v-for="item of searchAbout" :key="item.id">
+      <v-col cols="12" sm="12" md="6"  v-for="item of searchAbout" :key="item.id">
         <v-row width="100%" class="pa-0 g-5 col-card" dense>
-          <v-col cols="6" class="pa-0">
+          <v-col cols="12" sm="6" class="pa-0">
             <v-carousel class="pa-0 carousel">
               <v-carousel-item
                 v-for="(item, i) in data"
@@ -24,7 +26,7 @@
               ></v-carousel-item>
             </v-carousel>
           </v-col>
-          <v-col cols="6" class="pa-0">
+          <v-col cols="12" sm="6" class="pa-0">
             <v-card class="mx-auto pa-0 card" height="100%">
               <v-card-text class="d-flex flex-column fdsfs">
                 <div>
@@ -42,13 +44,13 @@
                     </h3>
                   </div>
                 </div>
-                <v-row class="v-row">
+                <v-row class="v-row" justify="center">
                   <v-col cols="2"
                     ><v-btn
                       dark
                       fab
                       small
-                      color="error"
+                      color="error mx-auto"
                       @click="deleteId(item._id)"
                     >
                       <v-icon> mdi-delete-outline </v-icon>
@@ -56,10 +58,9 @@
                   </v-col>
                   <v-col cols="2">
                     <v-btn
-                      dark
                       fab
                       small
-                      color="primary"
+                      color="#f5f5f5"
                       class="mx-2"
                       :to="`/aboutedit/${item._id}`"
                     >
@@ -68,8 +69,7 @@
                   </v-col>
                   <v-col cols="8">
                     <v-btn
-                      color="primary"
-                      dark
+                      color="#f5f5f5"
                       class="mx-2"
                       :to="`/aboutedit/${item._id}`"
                     >
@@ -109,11 +109,12 @@ export default {
   computed: {
     searchAbout: function () {
       return this.data.filter((item) => {
-        if (!item.name.en) {
+        if (item.name.en) {
           return item.name.en.match(this.search);
-        } else {
+        }  
+        if(item.name.ru) {
           return item.name.ru.match(this.search);
-        }
+        }else{}
       });
     },
   },
@@ -145,7 +146,7 @@ h1 {
 .card {
   border-radius: 0 !important;
   box-shadow: none !important;
-  background-color: #82b1ff;
+  background-color: #424242;
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
@@ -153,7 +154,23 @@ h1 {
   height: 100%;
 }
 .v-row {
+  width: 100% !important;
   display: flex;
   align-items: flex-end;
+}
+@media  (max-width: 600px) {
+  .card{
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-top-right-radius: 0 !important;
+  height: 300px !important;
+}
+.carousel{
+  height: 300px !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 }
 </style>

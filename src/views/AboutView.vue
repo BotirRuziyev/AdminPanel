@@ -20,10 +20,10 @@
           class="mt-7"
         ></v-textarea>
         <label style="width: 100%;">Loyihaning rasmini yuklang</label>
-      <input type="file" @change="selectFile" placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
+      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
         outlined
         dense
-        class="mt-6">
+        class="mt-6 mb-16 pa-3">
         <v-btn depressed color="primary" class="mt-16 mb-6" @click="aboutAdd"> Yuklash </v-btn>
       </form>
     </v-container>

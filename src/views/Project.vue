@@ -1,7 +1,7 @@
 <template>
-    <v-container class="px-10">
+    <div class="px-10">
         <ProjectSee />
-   </v-container>
+   </div>
 </template>
 
 <script>

@@ -1,159 +1,120 @@
 <template>
   <v-sheet>
     <v-container class="px-10">
-      <h1 class="dark--text py-3">Loyihalar qo'shish</h1>
+      <h1 class="dark--text py-5">Projectni qo'shish</h1>
 
       <!-- Jamoa a'zosining ismi -->
 
-      <label>Loyihaning turi Rus</label>
+      <label>Projectni Nomi Rus tilida</label>
       <v-text-field
         outlined
-        v-model="nameRus"
-        :counter="25"
-        :rules="nameRules"
+        v-model="nameru"
+        :counter="20"
         label="Loyiha turini yozing rus tilida"
         required
         class="mt-6"
       ></v-text-field>
-      <label>Loyihaning turi English</label>
+      <label>Projectni Nomi Ingliz tilida</label>
       <v-text-field
         outlined
-        v-model="nameingliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyiha turini yozing ingliz tilida"
+        v-model="nameen"
+        :counter="20"
+        label="Projectni nomini yozing ingliz tilida"
         required
         class="mt-6"
       ></v-text-field>
       <!-- Jamoa a'zosining kasbi -->
-      <label>Loyihaning sarlavhasi Rus tilida</label>
+      <label>Maydonni o'lchamini kiriting</label>
       <v-text-field
         outlined
-        v-model="kasbiRus"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning sarlavhasini yozing Rus tilida"
+        v-model="space"
+        :counter="20"
+        type="number"
+        label="Maydonni o'lchamini kiriting"
         required
         class="mt-6"
       ></v-text-field>
-      <label>Loyihaning sarlavhasi Ingliz tilida</label>
+      <label>Projectni narxini kiriting</label>
       <v-text-field
         outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning sarlavhasini yozing Ingliz tilida"
+        v-model="price"
+        :counter="20"
+        label="Narxini kiriting"
         required
+        type="number"
         class="mt-6"
       ></v-text-field>
 
-      <label>Loyihaning rasmi</label>
-      <v-file-input
-        label="Loyihaning rasmi"
-        outlined
-        dense
-        class="mt-6"
-      ></v-file-input>
-
-      <label form="#">Loyihaning topshirilgan yili</label>
+      <label form="#">Xonalar sonini kiriting</label>
      <v-text-field
-        label="Loyihaning topshirilgan yili"
+        v-model="rooms"
+        label="Xonalar sonini kiriting"
         outlined
-        dense
         class="mt-6"
         type="number"
       ></v-text-field>
-
-      <label>Loyihani qildirgan kompanyani yozing</label>
-      <v-text-field
+      <label form="#">Qavatlar sonini kiriting</label>
+     <v-text-field
+        v-model="floor"
+        label="Qavatlar sonini kiriting"
         outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihani qildirgan kompanyani yozing"
-        required
         class="mt-6"
       ></v-text-field>
 
-      <label>Loyihaning nomi Rus tilida</label>
-      <v-text-field
+      <label>Project Rasmini yuklang</label>
+      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
         outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning nomini yozing Rus tilida "
-        required
-        class="mt-6"
-      ></v-text-field>
-
-      <label>Loyihaning nomi Ingliz tilida</label>
-      <v-text-field
-        outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning nomini yozing Ingliz tilida"
-        required
-        class="mt-6"
-      ></v-text-field>
-      <label>Loyihaning qurilgan joyi Rus tilida</label>
-      <v-text-field
-        outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning qurilgan joyini yozing Rus tilida"
-        required
-        class="mt-6"
-      ></v-text-field>
-      <label>Loyihaning qurilgan joyi Ingliz tilida</label>
-      <v-text-field
-        outlined
-        v-model="kasbiIngliz"
-        :counter="25"
-        :rules="nameRules"
-        label="Loyihaning qurilgan joyini yozing Ingliz tilida"
-        required
-        class="mt-6"
-      ></v-text-field>
-
-      <label for="#">Loyiha haqida Rus tilida</label>
-      <v-textarea
-        outlined
-        name="input-7-4"
-        label="Loyiha haqida yozing Rus tilida"
-        class="my-10"
-      ></v-textarea>
-      <label>Loyiha haqida Ingliz tilida</label>
-      <v-textarea
-        outlined
-        name="input-7-4"
-        label="Loyiha haqida yozing Ingliz tilida"
-        class="my-10"
-      ></v-textarea>
-      <v-btn depressed color="primary"> Yuklash </v-btn>
+        dense
+        class="mt-6 mb-16 pa-3">
+      <v-btn depressed color="primary mb-10" @click="aboutAdd"> Yuklash </v-btn>
     </v-container>
   </v-sheet>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      valid: true,
-      nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 15) || "Name must be less than 25 characters",
-      ],
-
-      email: "",
-      emailRules: [
-        (v) => !!v || "E-mail is required",
-        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
-      ],
-    };
+  name: "About",
+  data(){
+    return{
+         nameru: null,
+         nameen: null,
+         space: null,
+         price: null,
+         rooms: null,
+         floor: null,
+         file: null,
+    }
   },
-};
+  methods:{
+     selectFile(event){
+         this.file = event.target.files;
+         console.log(this.file);
+     },
+
+    aboutAdd(){
+      const fd = new FormData();
+      for(let item of Object.keys(this.file)){
+           fd.append("file", this.file[item]);
+      }
+       fd.append("nameen", this.nameen);
+       fd.append("nameru", this.nameru);
+       fd.append("space", this.space);
+       fd.append("price", this.price);
+       fd.append("rooms", this.rooms);
+       fd.append("floor", this.floor);
+
+      this.axios.post("http://localhost:2004/project/add", fd)
+      .then((res) => {
+          console.log(res, "Chiqdi");
+          window.location.reload()
+      })
+      .catch((err) =>{
+        console.log(err);
+      })
+    }
+  },
+
+}
 </script>
 
 <style>
@@ -163,7 +124,6 @@ export default {
   background-color:red !important;
   border-radius: 5px !important;
   margin-bottom: 20px;
-  /* border: 1px solid red; */
 }
   h1{
   font-family: sans-serif;
