@@ -46,7 +46,7 @@
       ></v-text-field>
 
       <label form="#">Xonalar sonini kiriting</label>
-     <v-text-field
+      <v-text-field
         v-model="rooms"
         label="Xonalar sonini kiriting"
         outlined
@@ -54,7 +54,7 @@
         type="number"
       ></v-text-field>
       <label form="#">Qavatlar sonini kiriting</label>
-     <v-text-field
+      <v-text-field
         v-model="floor"
         label="Qavatlar sonini kiriting"
         outlined
@@ -62,10 +62,17 @@
       ></v-text-field>
 
       <label>Project Rasmini yuklang</label>
-      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
+      <input
+        type="file"
+        @change="selectFile"
+        multiple
+        placeholder="Loyihaning rasmi"
+        style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4)"
+        label="Loyihaning rasmi"
         outlined
         dense
-        class="mt-6 mb-16 pa-3">
+        class="mt-6 mb-16 pa-3"
+      />
       <v-btn depressed color="primary mb-10" @click="aboutAdd"> Yuklash </v-btn>
     </v-container>
   </v-sheet>
@@ -74,62 +81,62 @@
 <script>
 export default {
   name: "About",
-  data(){
-    return{
-         nameru: null,
-         nameen: null,
-         space: null,
-         price: null,
-         rooms: null,
-         floor: null,
-         file: null,
-    }
+  data() {
+    return {
+      nameru: null,
+      nameen: null,
+      space: null,
+      price: null,
+      rooms: null,
+      floor: null,
+      file: null,
+    };
   },
-  methods:{
-     selectFile(event){
-         this.file = event.target.files;
-         console.log(this.file);
-     },
+  methods: {
+    selectFile(event) {
+      this.file = event.target.files;
+      console.log(this.file);
+    },
 
-    aboutAdd(){
+    aboutAdd() {
       const fd = new FormData();
-      for(let item of Object.keys(this.file)){
-           fd.append("file", this.file[item]);
+      for (let item of Object.keys(this.file)) {
+        fd.append("file", this.file[item]);
       }
-       fd.append("nameen", this.nameen);
-       fd.append("nameru", this.nameru);
-       fd.append("space", this.space);
-       fd.append("price", this.price);
-       fd.append("rooms", this.rooms);
-       fd.append("floor", this.floor);
+      fd.append("nameen", this.nameen);
+      fd.append("nameru", this.nameru);
+      fd.append("space", this.space);
+      fd.append("price", this.price);
+      fd.append("rooms", this.rooms);
+      fd.append("floor", this.floor);
 
-      this.axios.post("http://localhost:2004/project/add", fd)
-      .then((res) => {
+      this.axios
+        .post("http://localhost:2004/project/add", fd)
+        .then((res) => {
           console.log(res, "Chiqdi");
-          window.location.reload()
-      })
-      .catch((err) =>{
-        console.log(err);
-      })
-    }
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
-
-}
+};
 </script>
 
 <style>
 .hr {
   height: 3px !important;
   width: 100% !important;
-  background-color:red !important;
+  background-color: red !important;
   border-radius: 5px !important;
   margin-bottom: 20px;
 }
-  h1{
+h1 {
   font-family: sans-serif;
   opacity: 0.6;
 }
-label{
+label {
   opacity: 0.8;
 }
 </style>

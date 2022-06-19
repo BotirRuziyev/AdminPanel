@@ -2,7 +2,7 @@
   <div>
     <h1 class="py-10">Biz haqimizda</h1>
     <div class="d-none">
-      {{data}}
+      {{ data }}
     </div>
     <v-text-field
       v-model="search"
@@ -14,7 +14,13 @@
     ></v-text-field>
 
     <v-row class="py-10">
-      <v-col cols="12" sm="12" md="6"  v-for="item of searchAbout" :key="item.id">
+      <v-col
+        cols="12"
+        sm="12"
+        md="6"
+        v-for="item of searchAbout"
+        :key="item.id"
+      >
         <v-row width="100%" class="pa-0 g-5 col-card" dense>
           <v-col cols="12" sm="6" class="pa-0">
             <v-carousel class="pa-0 carousel">
@@ -109,12 +115,11 @@ export default {
   computed: {
     searchAbout: function () {
       return this.data.filter((item) => {
-        if (item.name.en) {
+        if (!item.name.en) {
           return item.name.en.match(this.search);
-        }  
-        if(item.name.ru) {
+        } else {
           return item.name.ru.match(this.search);
-        }else{}
+        }
       });
     },
   },
@@ -122,9 +127,7 @@ export default {
     this.axios
       .get("http://localhost:2004/about/all")
       .then((res) => {
-        console.log(res);
         this.data = res.data;
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -158,19 +161,19 @@ h1 {
   display: flex;
   align-items: flex-end;
 }
-@media  (max-width: 600px) {
-  .card{
-  border-bottom-left-radius: 10px !important;
-  border-bottom-right-radius: 10px !important;
-  border-top-right-radius: 0 !important;
-  height: 300px !important;
-}
-.carousel{
-  height: 300px !important;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
+@media (max-width: 600px) {
+  .card {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 0 !important;
+    height: 300px !important;
+  }
+  .carousel {
+    height: 300px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 </style>
