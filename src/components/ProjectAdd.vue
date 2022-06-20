@@ -98,7 +98,9 @@ export default {
          rooms: null,
          floor: null,
          file: null,
-    },
+    }
+  },
+
   methods: {
     selectFile(event) {
       this.file = event.target.files;
@@ -110,7 +112,6 @@ export default {
       for (let item of Object.keys(this.file)) {
         fd.append("file", this.file[item]);
       }
-<<<<<<< HEAD
        fd.append("nameuz", this.nameuz);
        fd.append("nameen", this.nameen);
        fd.append("nameru", this.nameru);
@@ -118,35 +119,18 @@ export default {
        fd.append("price", this.price);
        fd.append("rooms", this.rooms);
        fd.append("floor", this.floor);
-=======
-      fd.append("nameen", this.nameen);
-      fd.append("nameru", this.nameru);
-      fd.append("space", this.space);
-      fd.append("price", this.price);
-      fd.append("rooms", this.rooms);
-      fd.append("floor", this.floor);
->>>>>>> 7d0297042555cdfd0ebcfcb3aea8cc33c56c080d
 
       this.axios
         .post("http://localhost:2004/project/add", fd)
         .then((res) => {
           console.log(res, "Chiqdi");
-<<<<<<< HEAD
           window.location.reload()
       })
       .catch((err) =>{
         console.log("err");
       })
     }
-=======
-          window.location.reload();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     },
->>>>>>> 7d0297042555cdfd0ebcfcb3aea8cc33c56c080d
-  },
 };
 </script>
 

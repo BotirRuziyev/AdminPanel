@@ -115,12 +115,7 @@ export default {
       return this.data.filter((item) => {
         if (!item.name.en) {
           return item.name.en.match(this.search);
-<<<<<<< HEAD
-        }  
-        else {
-=======
-        } else {
->>>>>>> 7d0297042555cdfd0ebcfcb3aea8cc33c56c080d
+        }else {
           return item.name.ru.match(this.search);
         }
       });

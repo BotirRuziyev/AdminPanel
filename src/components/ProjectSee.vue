@@ -71,14 +71,9 @@
                     </v-btn>
                   </v-col>
                   <v-col cols="8">
-<<<<<<< HEAD
-                  <v-btn
-                          class="mx-2"
-                          :to="`/projectimgedit/${item._id}`"
-                        >
-                          img tahrirlash
-                        </v-btn>
-=======
+                    <v-btn class="mx-2" :to="`/projectimgedit/${item._id}`">
+                      img tahrirlash
+                    </v-btn>
                     <v-btn
                       color="#f5f5f5"
                       class="mx-2"
@@ -86,7 +81,6 @@
                     >
                       img tahrirlash
                     </v-btn>
->>>>>>> 7d0297042555cdfd0ebcfcb3aea8cc33c56c080d
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -99,7 +93,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
   export default {
     data () {
       return {
@@ -111,26 +104,9 @@
          this.axios.delete(`http://localhost:2004/floorInfo/delete/${id}`)
          .then(res => {
           window.location.reload()
-=======
-export default {
-  data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
-    deleteId(id) {
-      this.axios
-        .delete(`http://localhost:2004/project/delete/${id}`)
-        .then((res) => {
-          window.location.reload();
->>>>>>> 7d0297042555cdfd0ebcfcb3aea8cc33c56c080d
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+         })
+       }
     },
-  },
   mounted() {
     this.axios
       .get("http://localhost:2004/project/all")
