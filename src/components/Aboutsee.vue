@@ -60,7 +60,6 @@
                     <v-btn
                       fab
                       small
-                      color="#f5f5f5"
                       class="mx-2"
                       :to="`/aboutedit/${item._id}`"
                     >
@@ -69,9 +68,8 @@
                   </v-col>
                   <v-col cols="8">
                     <v-btn
-                      color="#f5f5f5"
                       class="mx-2"
-                      :to="`/aboutedit/${item._id}`"
+                      :to="`/aboutimgedit/${item._id}`"
                     >
                       img tahrirlash
                     </v-btn>
@@ -112,9 +110,9 @@ export default {
         if (item.name.en) {
           return item.name.en.match(this.search);
         }  
-        if(item.name.ru) {
+        else {
           return item.name.ru.match(this.search);
-        }else{}
+        }
       });
     },
   },

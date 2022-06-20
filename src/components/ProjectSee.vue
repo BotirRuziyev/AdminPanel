@@ -70,7 +70,6 @@
                         </v-col>
                   <v-col cols="8">
                   <v-btn
-                          color="#f5f5f5"
                           class="mx-2"
                           :to="`/projectimgedit/${item._id}`"
                         >
@@ -96,7 +95,7 @@
     },
     methods:{
        deleteId(id){
-         this.axios.delete(`http://localhost:2004/project/delete/${id}`)
+         this.axios.delete(`http://localhost:2004/floorInfo/delete/${id}`)
          .then(res => {
           window.location.reload()
         })

@@ -21,6 +21,11 @@ const routes = [
     component: () => import('../views/AboutSee.vue')
   },
   {
+    path: '/aboutimgedit/:id',
+    name: 'aboutimgedit',
+    component: () => import('../views/AboutImgEdit.vue')
+  },
+  {
     path: '/addproject',
     name: 'addproject',
     component: () => import('../views/AddProject.vue')
@@ -41,14 +46,14 @@ const routes = [
     component: () => import('../views/ProjectImgEdit.vue')
   },
   {
-    path: '/addservice',
-    name: 'addservice',
-    component: () => import('../views/AddService.vue')
+    path: '/addfloorname',
+    name: 'addFloorName',
+    component: () => import('../views/AddFloorName.vue')
   },
   {
-    path: '/service',
-    name: 'service',
-    component: () => import('../views/Service.vue')
+    path: '/floornamesee',
+    name: 'floornamesee',
+    component: () => import('../views/FloorNameSee.vue')
   },
   {
     path: '/addteam',
@@ -66,9 +71,9 @@ const routes = [
     component: () => import('../views/AddBestProject.vue')
   },
   {
-    path: '/bestproject',
-    name: 'bestproject',
-    component: () => import('../views/BestProject.vue')
+    path: '/bestprojectsee',
+    name: 'bestprojectsee',
+    component: () => import('../views/BestProjectSee.vue')
   },
   {
     path: '/seemessage',

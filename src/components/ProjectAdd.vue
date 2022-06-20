@@ -3,14 +3,21 @@
     <v-container class="px-10">
       <h1 class="dark--text py-5">Projectni qo'shish</h1>
 
-      <!-- Jamoa a'zosining ismi -->
-
+      <label>Projectni Nomi Uzbek tilida</label>
+      <v-text-field
+        outlined
+        v-model="nameuz"
+        :counter="20"
+        label="Loyiha nomini yozing uzbek tilida"
+        required
+        class="mt-6"
+      ></v-text-field>
       <label>Projectni Nomi Rus tilida</label>
       <v-text-field
         outlined
         v-model="nameru"
         :counter="20"
-        label="Loyiha turini yozing rus tilida"
+        label="Loyiha nomini yozing rus tilida"
         required
         class="mt-6"
       ></v-text-field>
@@ -23,7 +30,6 @@
         required
         class="mt-6"
       ></v-text-field>
-      <!-- Jamoa a'zosining kasbi -->
       <label>Maydonni o'lchamini kiriting</label>
       <v-text-field
         outlined
@@ -62,7 +68,7 @@
       ></v-text-field>
 
       <label>Project Rasmini yuklang</label>
-      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid rgb(30, 29, 29, 0.4);" label="Loyihaning rasmi"
+      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid;" label="Loyihaning rasmi"
         outlined
         dense
         class="mt-6 mb-16 pa-3">
@@ -76,6 +82,7 @@ export default {
   name: "About",
   data(){
     return{
+         nameuz: null,
          nameru: null,
          nameen: null,
          space: null,
@@ -96,6 +103,7 @@ export default {
       for(let item of Object.keys(this.file)){
            fd.append("file", this.file[item]);
       }
+       fd.append("nameuz", this.nameuz);
        fd.append("nameen", this.nameen);
        fd.append("nameru", this.nameru);
        fd.append("space", this.space);
@@ -109,7 +117,7 @@ export default {
           window.location.reload()
       })
       .catch((err) =>{
-        console.log(err);
+        console.log("err");
       })
     }
   },
@@ -131,5 +139,8 @@ export default {
 }
 label{
   opacity: 0.8;
+}
+input{
+  border-radius: 7px;
 }
 </style>

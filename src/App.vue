@@ -113,19 +113,20 @@ export default {
         ],
       },
       {
-        action: "mdi-rotate-3d white--text",
-        title: "3D Modellar",
+        action: "mdi-school white--text",
+        title: "Project",
         items: [
-          { title: "3D Model qo'shish", to: "/addproject" },
-          { title: "3D Modellar", to: "/project" },
+          { title: "Project qo'shish", to: "/addproject" },
+          { title: "Projectlar", to: "/project" },
+          { title: "Qavat qo'shish", to: "/addfloorname" },
         ],
       },
       {
         action: "mdi-school white--text",
-        title: "Xizmatar",
+        title: "FloorName",
         items: [
-          { title: "xizmatlar qo'shish", to: "/addservice" },
-          { title: "xizmatlar", to: "/service" },
+          { title: "FloorName qo'shish", to: "/addfloorname" },
+          { title: "FloorNamelar", to: "/floornamesee" },
         ],
       },
       {
@@ -141,7 +142,7 @@ export default {
         title: "Eng yaxshi 3D modellar",
         items: [
           { title: "Eng yaxshi loyihalar qo'shish", to: "/addbestproject" },
-          { title: "Eng yaxshi loyihalar", to: "/bestproject" },
+          { title: "Eng yaxshi loyihalar", to: "/bestprojectsee" },
         ],
       },
       {

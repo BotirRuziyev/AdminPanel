@@ -3,6 +3,15 @@
     <v-container class="px-10">
       <h1 class="dark--text py-5">Projectni Taxrirlash</h1>
 
+      <label>Projectni taxrirlash Uzbek tilida</label>
+      <v-text-field
+        outlined
+        v-model="data2.name.uz"
+        :counter="25"
+        label="Projectni taxrirlash  rus tilida"
+        required
+        class="mt-6"
+      ></v-text-field>
       <label>Projectni taxrirlash Rus tilida</label>
       <v-text-field
         outlined
@@ -67,6 +76,7 @@ export default {
 data(){
     return{
          data: {
+           nameuz:null,
            nameen:null,
            nameru:null,
            space: null,
@@ -76,6 +86,7 @@ data(){
          },
          data2:{
            name: {
+             uz:null,
              ru:null,
              en:null,
            },
@@ -93,6 +104,7 @@ data(){
   },
   methods:{
     projectAdd(){
+      this.data.nameuz = this.data2.name.uz
       this.data.nameru = this.data2.name.ru
       this.data.nameen = this.data2.name.en
       this.data.space = this.data2.space
