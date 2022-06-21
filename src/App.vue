@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire" class="app">
-    <v-navigation-drawer v-model="drawer" app color="#363636">
-      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#363636">
+    <v-navigation-drawer v-model="drawer" app color="#203647">
+      <v-card class="mx-auto elevation-0 mt-12" max-width="500" color="#203647">
         <v-list>
           <v-list-group
             v-for="item in items"

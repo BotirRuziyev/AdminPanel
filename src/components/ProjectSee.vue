@@ -19,8 +19,8 @@
             <v-card class="mx-auto pa-0 card" height="100%">
               <v-card-text class="d-flex flex-column fdsfs">
                 <div>
-                  <router-link :to="`/floornamesee/${item._id}`" class="eye"><v-icon>mdi-eye-arrow-right-outline</v-icon></router-link>
-                  <h2 class="text-center mt-3 white--text">Malumotlar:</h2>
+                  <router-link :to="`/floornamesee/${item._id}`" class="eye"><v-icon class="icon">mdi-eye-arrow-right-outline</v-icon></router-link>
+                  <h2 class=" mt-3 white--text">Malumotlar:</h2>
                   <div class="white--text d-flex mt-5">
                     <h3 style="font-size: 20px">Ru:</h3>
                     <h3 class="ml-3">{{ item.name.en }}</h3>
@@ -42,8 +42,8 @@
                     <h3 class="ml-3">{{ item.rooms }}</h3>
                   </div>
                   <h3 class="white--text d-flex mt-5">
-                    <router-link :to="`/floornamesee/${item._id}`"><h3 style="font-size: 20px" >floor:</h3></router-link>
-                    <router-link :to="`/floornamesee/${item._id}`" class="ml-3">{{ item.floor }}</router-link>
+                    <h3 style="font-size: 20px" >floor:</h3>
+                    <h3 class="ml-3">{{ item.floor }}</h3>
                   </h3>
                 </div>
                 <v-row class="v-row">
@@ -137,7 +137,7 @@ h1 {
 .card {
   border-radius: 0 !important;
   box-shadow: none !important;
-  background-color: #424242;
+  background-color: #203647;
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
@@ -166,7 +166,14 @@ h1 {
 }
 .eye{
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 20px;
+}
+.eye .icon{
+  color: white;
+  font-size: 30px;
+}
+.eye .icon:hover{
+  color: #007CC7;
 }
 </style>
