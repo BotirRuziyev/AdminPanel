@@ -68,7 +68,6 @@
       ></v-text-field>
 
       <label>Project Rasmini yuklang</label>
-      <input type="file" @change="selectFile" multiple placeholder="Loyihaning rasmi" style="width: 100%; border: 1px solid;" label="Loyihaning rasmi" />
       <input
         type="file"
         @change="selectFile"

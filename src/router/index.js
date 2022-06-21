@@ -51,9 +51,14 @@ const routes = [
     component: () => import('../views/AddFloorName.vue')
   },
   {
-    path: '/floornamesee',
+    path: '/floornamesee/:id',
     name: 'floornamesee',
     component: () => import('../views/FloorNameSee.vue')
+  },
+  {
+    path: '/floornameedit/:id',
+    name: 'floornameedit',
+    component: () => import('../views/FloorNameEdit.vue')
   },
   {
     path: '/addteam',

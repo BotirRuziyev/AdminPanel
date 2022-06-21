@@ -2,51 +2,46 @@
   <v-sheet>
     <v-container class="px-10">
       <h1 class="dark--text py-3">Qavat nomini qo'shish</h1>
-      {{ data }}
       <v-select
-        :items="item2"
         label="Outlined style"
         outlined
-        v-model="project_ID"
-      ></v-select>
+        v-model="data.project_ID"
+      >
+      <option  :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
+      </v-select>
+      <select name="" id="2" class="select" v-model="data.project_ID" >
+        <option value="" active>Id</option>
+        <option  :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
+      </select>
+      <br>
 
       <label>Qavat nomi Uzbek tilida</label>
       <v-text-field
         outlined
-        v-model="nameuz"
+        v-model="data.nameuz"
         :counter="25"
-        label="xizmat nomini yozing rus tilida"
+        label="Qavat nomini yozing rus tilida"
         required
         class="mt-6"
       ></v-text-field>
       <label>Qavat nomi Rus tilida</label>
       <v-text-field
         outlined
-        v-model="nameru"
+        v-model="data.nameru"
         :counter="25"
-        label="xizmat nomini yozing rus tilida"
+        label="Qavat nomini yozing rus tilida"
         required
         class="mt-6"
       ></v-text-field>
       <label>Qavat nomi English tilida</label>
       <v-text-field
         outlined
-        v-model="nameen"
+        v-model="data.nameen"
         :counter="25"
-        label="xizmat nomini yozing ingliz tilida"
+        label="Qavat nomini yozing ingliz tilida"
         required
         class="mt-6"
       ></v-text-field>
-      <!-- <label>Qavat nomi English tilida</label>
-      <v-text-field
-        outlined
-        v-model="project_ID"
-        :counter="25"
-        label="xizmat nomini yozing ingliz tilida"
-        required
-        class="mt-6"
-        type="number"
-      ></v-text-field> -->
       <v-btn depressed color="primary" @click="floorNameAdd"> Yuklash </v-btn>
     </v-container>
   </v-sheet>
@@ -56,25 +51,21 @@
 export default {
   data() {
     return {
+      data:{
       nameuz: null,
       nameru: null,
       nameen: null,
       project_ID: null,
-      items: [],
-      data: null,
-      // items: [1, 2, 3, 4],
+      },
+      data2: null,
+      items: [1, 2, 3, 4],
     };
   },
   methods: {
     floorNameAdd() {
-      const fd = new FormData();
-      fd.append("nameuz", this.nameuz);
-      fd.append("nameen", this.nameen);
-      fd.append("nameru", this.nameru);
-      fd.append("project_ID", this.project_ID);
 
       this.axios
-        .post("http://localhost:2004/floorName/add", fd)
+        .post("http://localhost:2004/floorName/add", this.data)
         .then((res) => {
           console.log(res, "Chiqdi");
           window.location.reload();
@@ -89,7 +80,7 @@ export default {
       .get("http://localhost:2004/project/all")
       .then((res) => {
         console.log(res);
-        this.data = res.data;
+        this.data2 = res.data;
       })
       .catch((err) => {
         console.log(err);
@@ -112,5 +103,14 @@ h1 {
 }
 label {
   opacity: 0.8;
+}
+.select{
+  width: 100%;
+  padding: 13px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+option{
+  padding: 10px;
+  height: 30px;
 }
 </style>

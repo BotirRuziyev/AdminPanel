@@ -118,15 +118,14 @@ export default {
         items: [
           { title: "Project qo'shish", to: "/addproject" },
           { title: "Projectlar", to: "/project" },
-          { title: "Qavat qo'shish", to: "/addfloorname" },
         ],
       },
       {
         action: "mdi-school white--text",
-        title: "FloorName",
+        title: "Qavatlar haqida",
         items: [
-          { title: "FloorName qo'shish", to: "/addfloorname" },
-          { title: "FloorNamelar", to: "/floornamesee" },
+          { title: "Qavat qo'shish", to: "/addfloorname" },
+          { title: "Qavatlar haqida ko'rish", to: "/floornamesee" },
         ],
       },
       {

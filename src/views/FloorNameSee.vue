@@ -1,14 +1,14 @@
 <template>
     <v-container>
-        <ServiceSee />
+        <FloorSee />
     </v-container>
 </template>
 
 <script>
-import ServiceSee from "@/components/ServiceSee"
+import FloorSee from "@/components/FloorSee"
 export default {
     components:{
-        ServiceSee,
+        FloorSee,
     }
 }
 </script>

@@ -19,6 +19,7 @@
             <v-card class="mx-auto pa-0 card" height="100%">
               <v-card-text class="d-flex flex-column fdsfs">
                 <div>
+                  <router-link :to="`/floornamesee/${item._id}`" class="eye"><v-icon>mdi-eye-arrow-right-outline</v-icon></router-link>
                   <h2 class="text-center mt-3 white--text">Malumotlar:</h2>
                   <div class="white--text d-flex mt-5">
                     <h3 style="font-size: 20px">Ru:</h3>
@@ -40,10 +41,10 @@
                     <h3 style="font-size: 20px">rooms:</h3>
                     <h3 class="ml-3">{{ item.rooms }}</h3>
                   </div>
-                  <div class="white--text d-flex mt-5">
-                    <h3 style="font-size: 20px">floor:</h3>
-                    <h3 class="ml-3">{{ item.floor }}</h3>
-                  </div>
+                  <h3 class="white--text d-flex mt-5">
+                    <router-link :to="`/floornamesee/${item._id}`"><h3 style="font-size: 20px" >floor:</h3></router-link>
+                    <router-link :to="`/floornamesee/${item._id}`" class="ml-3">{{ item.floor }}</router-link>
+                  </h3>
                 </div>
                 <v-row class="v-row">
                   <v-col cols="2"
@@ -71,9 +72,6 @@
                     </v-btn>
                   </v-col>
                   <v-col cols="8">
-                    <v-btn class="mx-2" :to="`/projectimgedit/${item._id}`">
-                      img tahrirlash
-                    </v-btn>
                     <v-btn
                       color="#f5f5f5"
                       class="mx-2"
@@ -122,6 +120,11 @@
 </script>
 
 <style scoped>
+a{
+  text-decoration: none;
+  color: white;
+  padding: 0 0 10px 0;
+}
 h1 {
   font-family: sans-serif;
   opacity: 0.6;
@@ -160,5 +163,10 @@ h1 {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
+}
+.eye{
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 </style>
