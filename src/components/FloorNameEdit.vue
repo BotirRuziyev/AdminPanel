@@ -2,15 +2,8 @@
     <v-sheet>
     <v-container class="px-10">
       <h1 class="dark--text py-3">Qavat nomini taxrirlash</h1>
-      <!-- <v-select
-        label="Outlined style"
-        outlined
-        v-model="data.project_ID"
-      >
-      <option  :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
-      </v-select> -->
-      <select name="" id="2" class="select" v-model="data2.project_ID" >
-        <option value="1">Id</option>
+      <label>Project nomini tanlang</label>
+      <select name="" id="" class="select" v-model="data2.project_ID" >
         <option  :value="item._id" v-for="item of data3" :key="item._id">{{item.name.ru}}</option>
       </select>
       <br>
@@ -136,6 +129,9 @@ label {
   width: 100%;
   padding: 13px;
   border: 2px solid rgba(0, 0, 0, 0.2);
+}
+select{
+  margin: 20px 0;
 }
 option{
   padding: 10px;

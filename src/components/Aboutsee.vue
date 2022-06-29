@@ -22,7 +22,7 @@
         :key="item.id"
       >
         <v-row width="100%" class="pa-0 g-5 col-card" dense>
-          <v-col cols="12" sm="6" class="pa-0">
+          <v-col cols="12" class="pa-0">
             <v-carousel class="pa-0 carousel">
               <v-carousel-item
                 v-for="(item, i) in data"
@@ -32,11 +32,17 @@
               ></v-carousel-item>
             </v-carousel>
           </v-col>
-          <v-col cols="12" sm="6" class="pa-0">
+          <v-col cols="12" class="pa-0">
             <v-card class="mx-auto pa-0 card" height="100%">
               <v-card-text class="d-flex flex-column fdsfs">
                 <div>
                   <h2 class="text-center mt-3 white--text">Malumotlar:</h2>
+                  <div class="white--text d-flex mt-10">
+                    <h3 style="font-size: 20px">Uz:</h3>
+                    <h3 class="ml-3">
+                      {{ item.name.uz }}
+                    </h3>
+                  </div>
                   <div class="white--text d-flex mt-10">
                     <h3 style="font-size: 20px">Ru:</h3>
                     <h3 class="ml-3">
@@ -142,13 +148,13 @@ h1 {
 .carousel {
   height: 350px !important;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card {
   border-radius: 0 !important;
   box-shadow: none !important;
   background-color: #424242;
-  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
 .fdsfs {

@@ -2,7 +2,7 @@
   <v-container>
     <h1 class="dark--text py-3">Qavatlar Haqida</h1>
     <v-row class="py-10" justify="center">
-      <v-col cols="12" sm="12" md="10">
+      <v-col cols="12" sm="12" md="12">
         <v-row width="100%" class="pa-0 g-5 col-card" dense>
           <v-col cols="12" sm="6" class="pa-0">
             <v-carousel class="pa-0 carousel">
@@ -16,80 +16,83 @@
           </v-col>
           <v-col cols="12" sm="6" class="pa-0">
             <v-card class="mx-auto white--text cards card">
-          <v-card-text class="d-flex flex-column fdsfs">
-            <p class="text-h5 white--text">Проект №1</p>
-            <div>
-              <span class="text-h6 white--text">Площадь :</span><span class="pl-3 white--text">{{ data2.space }} M<sup>2</sup></span>
-            </div>
-            <div class="py-4">
-              <span class="text-h6 white--text">Комнаты :</span><span class="pl-3 white--text">{{ data2.rooms }}</span>
-            </div>
-            <div>
-              <span class="text-h6 white--text">Этажы :</span><span class="pl-3 white--text">{{ data2.floor }}</span>
-            </div>
-          </v-card-text>
-          <!-- <v-card-actions class=" button">
-            <v-btn
-                outlined
-                fab
-                small
-                color="error"
-                @click="deleteId(item._id)"
-              >
-                <v-icon> mdi-delete-outline </v-icon>
-              </v-btn>
-              <v-btn
-                outlined
-                fab
-                small
-                color="warning"
-                class="mx-5"
-                :to="`/floornameedit/${item._id}`"
-              >
-                <v-icon>mdi-pencil</v-icon>
-              </v-btn>
-          </v-card-actions> -->
-        </v-card>
+              <v-card-text class="d-flex flex-column fdsfs pl-16">
+                <p class="text-h5 white--text">Проект №1</p>
+                <div>
+                  <span class="text-h6 white--text">Площадь :</span
+                  ><span class="pl-3 white--text"
+                    >{{ data2.space }} M<sup>2</sup></span
+                  >
+                </div>
+                <div class="py-4">
+                  <span class="text-h6 white--text">Комнаты :</span
+                  ><span class="pl-3 white--text">{{ data2.rooms }}</span>
+                </div>
+                <div>
+                  <span class="text-h6 white--text">Этажы :</span
+                  ><span class="pl-3 white--text">{{ data2.floor }}</span>
+                </div>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="10">
+      <v-col cols="12">
         <v-row>
-          <v-col cols="4" sm="3" class="text-center">
-               <p class="text-center text-h5 etaj">1 этаж</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-          </v-col>
-          <v-col cols="4" sm="3" class="text-center">
-               <p class="text-center text-h5 etaj">1 этаж</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-          </v-col>
-          <v-col cols="4" sm="3" class="text-center">
-               <p class="text-center text-h5 etaj">1 этаж</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-          </v-col>
-          <v-col cols="4" sm="3" class="text-center">
-               <p class="text-center text-h5 etaj">1 этаж</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
-                 <p>қдўкуь шзфцвфц</p>
+          <v-col
+            cols="12"
+            sm="4"
+            md="3"
+            class="text-center mt-10 px-6"
+            v-for="(item, i) in data1"
+            :key="i"
+          >
+           
+            <v-row class="etaj" align="center">
+              <v-col cols="6" class="text-center text-h5">
+                 {{ i + 1 }} этаж
+              </v-col>
+              <v-col cols="6">
+                <v-btn
+                  outlined
+                  fab
+                  small
+                  color="error"
+                  @click="deleteId(item._id)"
+                >
+                  <v-icon> mdi-delete-outline </v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row align="center">
+              <v-col cols="6" class="name">
+                <p>{{ item.name.uz }}</p>
+              </v-col>
+              <v-col cols="6" class="button">
+                <!-- <v-btn
+                  outlined
+                  fab
+                  small
+                  color="error"
+                  @click="deleteId(item._id)"
+                >
+                  <v-icon> mdi-delete-outline </v-icon>
+                </v-btn> -->
+
+                <v-btn
+                  dark
+                  v-bind="attrs"
+                  v-on="on"
+                  outlined
+                  fab
+                  small
+                  color="warning"
+                  :to="`/floornameedit/${item._id}`"
+                >
+                  <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-col>
@@ -98,20 +101,25 @@
 </template>
 
 <script>
+import FloorNameEdit from "@/components/FloorNameEdit";
 export default {
+  components: {
+    FloorNameEdit,
+  },
   data() {
     return {
       data2: null,
-      data: null,
+      data1: null,
     };
   },
-  computed:{
-      projectId(){
-        return this.$route.params.id
-      }
+  computed: {
+    projectId() {
+      return this.$route.params.id;
+    },
   },
 
   methods: {
+  
     deleteId(id) {
       this.axios
         .delete(`http://localhost:2004/floorInfo/deletetwo/${id}`)
@@ -123,36 +131,30 @@ export default {
         });
     },
   },
-  mounted() {
-        
-
-
-
+async mounted() {
     this.axios
       .get("http://localhost:2004/floorName/all")
       .then((res) => {
-        this.data = res.data;
+        this.data1 = res.data;
+
       })
       .catch((err) => {
         console.log(err);
       });
-
 
     this.axios
       .get("http://localhost:2004/project/all")
       .then((res) => {
         console.log(res);
         let result = res.data;
-          const d = result.find(item => item._id == this.projectId)
-          this.data2 = d
+        const d = result.find((item) => item._id == this.projectId);
+        this.data2 = d;
+        this.data3 = result;
       })
       .catch((err) => {
         console.log(err);
       });
-      
   },
-
-  
 };
 </script>
 
@@ -161,7 +163,7 @@ h1 {
   font-family: sans-serif;
   opacity: 0.6;
 }
-.cards{
+.cards {
   background-color: #203647;
   color: white;
   height: 100%;
@@ -169,7 +171,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
 }
-.button{
+.button {
   display: flex;
   justify-content: space-evenly;
   width: 80%;
@@ -208,9 +210,18 @@ h1 {
     border-bottom-right-radius: 0;
   }
 }
-.etaj{
+.etaj {
   background-color: #203647;
   color: white;
   border-radius: 10px;
-} 
+}
+.name {
+  overflow: hidden;
+}
+.name p {
+  margin-top: 12px;
+}
+.label{
+   line-height: 10px;
+}
 </style>

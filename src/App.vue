@@ -96,7 +96,7 @@ export default {
   name: "App",
 
   data: () => ({
-    drawer: null,
+    drawer: true,
     drawer2: null,
     darkmode: true,
     user: {
@@ -118,14 +118,7 @@ export default {
         items: [
           { title: "Project qo'shish", to: "/addproject" },
           { title: "Projectlar", to: "/project" },
-        ],
-      },
-      {
-        action: "mdi-school white--text",
-        title: "Qavatlar haqida",
-        items: [
           { title: "Qavat qo'shish", to: "/addfloorname" },
-          { title: "Qavatlar haqida ko'rish", to: "/floornamesee" },
         ],
       },
       {
@@ -152,10 +145,6 @@ export default {
     ],
   }),
   methods: {
-    darkMode() {
-      $vuetify.theme.dark = !$vuetify.theme.dark;
-      this.darkmode = !this.darkmode;
-    },
   },
 };
 </script>

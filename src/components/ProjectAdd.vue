@@ -2,6 +2,7 @@
   <v-sheet>
     <v-container class="px-10">
       <h1 class="dark--text py-5">Projectni qo'shish</h1>
+      <h2 v-if="modal" class="modal">Muaffaqiyatli yuklandi</h2>
 
       <label>Projectni Nomi Uzbek tilida</label>
       <v-text-field
@@ -97,6 +98,7 @@ export default {
          rooms: null,
          floor: null,
          file: null,
+         modal: false,
     }
   },
 
@@ -123,17 +125,27 @@ export default {
         .post("http://localhost:2004/project/add", fd)
         .then((res) => {
           console.log(res, "Chiqdi");
-          window.location.reload()
+          this.modal = true
+          setInterval( window.location.reload(), timeout=4000);
       })
       .catch((err) =>{
         console.log("err");
       })
+
+      
     }
     },
 };
 </script>
 
 <style>
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0.5;
+  color: red;
+}
 .hr {
   height: 3px !important;
   width: 100% !important;

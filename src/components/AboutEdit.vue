@@ -5,6 +5,14 @@
     <v-container class="px-10">
       <h1>Kompanya haqida Taxrirlash</h1>
       <form class="mt-16">
+        <label style="width: 100%;">Kompanya haqida Taxrirlash Uz tilida</label>
+        <v-textarea
+         v-model="data2.name.uz"
+          label="Kompanya haqida taxrirlang Uz tilida"
+          outlined
+          name="input-7-4"
+          class="mt-7"
+        ></v-textarea>
         <label style="width: 100%;">Kompanya haqida Taxrirlash Rus tilida</label>
         <v-textarea
          v-model="data2.name.ru"
@@ -32,11 +40,13 @@ export default {
 data(){
     return{
          data: {
+           nameuz:null,
            nameen:null,
            nameru:null,
          },
          data2:{
            name: {
+             uz:null,
              ru:null,
              en:null,
            }
@@ -57,6 +67,7 @@ data(){
     aboutAdd(){
       this.data.nameru = this.data2.name.ru
       this.data.nameen = this.data2.name.en
+      this.data.nameuz = this.data2.name.uz
       
       this.axios.put(`http://localhost:2004/about/putinfo/${this.aboutId}`, this.data)
       .then((res) => {

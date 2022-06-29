@@ -71,16 +71,6 @@ const routes = [
     component: () => import('../views/Team.vue')
   },
   {
-    path: '/addbestproject',
-    name: 'addbestproject',
-    component: () => import('../views/AddBestProject.vue')
-  },
-  {
-    path: '/bestprojectsee',
-    name: 'bestprojectsee',
-    component: () => import('../views/BestProjectSee.vue')
-  },
-  {
     path: '/seemessage',
     name: 'seemessage',
     component: () => import('../views/SeeMessage.vue')
@@ -89,11 +79,6 @@ const routes = [
     path: '/aboutedit/:id',
     name: 'aboutedit',
     component: () => import('../views/AboutEdit.vue')
-  },
-  {
-    path: '/3dmodulsedit/:id',
-    name: '3dmodulsedit',
-    component: () => import('../views/3DmodulsEdit.vue')
   },
 ]
 

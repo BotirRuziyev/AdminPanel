@@ -1,17 +1,17 @@
 <template>
   <v-sheet>
     <v-container class="px-10">
-      <h1 class="dark--text py-3">Qavat nomini qo'shish</h1>
-      <v-select
+      <h1 class="dark--text py-3 mb-16">Qavat nomini qo'shish</h1>
+      <!-- <v-select
         label="Outlined style"
         outlined
         v-model="data.project_ID"
       >
       <option  :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
-      </v-select>
-      <select name="" id="2" class="select" v-model="data.project_ID" >
-        <option value="" active>Id</option>
-        <option  :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
+      </v-select> -->
+      <label class="label">Qavat nomi Uzbek tilida</label>
+      <select name="name" id="2" class="select" v-model="data.project_ID" >
+        <option :value="item._id" v-for="item of data2" :key="item._id">{{item.name.ru}}</option>
       </select>
       <br>
 
@@ -90,13 +90,6 @@ export default {
 </script>
 
 <style>
-.hr {
-  height: 3px !important;
-  width: 100% !important;
-  background-color: red !important;
-  border-radius: 5px !important;
-  margin-bottom: 20px;
-}
 h1 {
   font-family: sans-serif;
   opacity: 0.6;
@@ -108,6 +101,7 @@ label {
   width: 100%;
   padding: 13px;
   border: 2px solid rgba(0, 0, 0, 0.2);
+  margin: 30px 0;
 }
 option{
   padding: 10px;

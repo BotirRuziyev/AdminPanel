@@ -124,9 +124,6 @@ data(){
       })
 
     },
-
-     
-    
   },
   mounted(){
       this.axios.get("http://localhost:2004/project/all")

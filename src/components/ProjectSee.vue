@@ -3,7 +3,7 @@
     <h1 class="py-10">Project Haqida</h1>
 
     <v-row class="py-10">
-      <v-col cols="12" sm="12" md="6" v-for="item of data" :key="item.id">
+      <v-col cols="12"  lg="6" v-for="item of data" :key="item.id">
         <v-row width="100%" class="pa-0 g-5 col-card" dense>
           <v-col cols="12" sm="6" class="pa-0">
             <v-carousel class="pa-0 carousel">
@@ -20,14 +20,19 @@
               <v-card-text class="d-flex flex-column fdsfs">
                 <div>
                   <router-link :to="`/floornamesee/${item._id}`" class="eye"><v-icon class="icon">mdi-eye-arrow-right-outline</v-icon></router-link>
-                  <h2 class=" mt-3 white--text">Malumotlar:</h2>
+                  <h2 class="
+                   mt-3 white--text">Malumotlar:</h2>
+                  <div class="white--text d-flex mt-5">
+                    <h3 style="font-size: 20px">Uz:</h3>
+                    <h3 class="ml-3">{{ item.name.uz }}</h3>
+                  </div>
                   <div class="white--text d-flex mt-5">
                     <h3 style="font-size: 20px">Ru:</h3>
-                    <h3 class="ml-3">{{ item.name.en }}</h3>
+                    <h3 class="ml-3">{{ item.name.ru }}</h3>
                   </div>
                   <div class="white--text d-flex mt-5">
                     <h3 style="font-size: 20px">Eng:</h3>
-                    <h3 class="ml-3">{{ item.name.ru }}</h3>
+                    <h3 class="ml-3">{{ item.name.en }}</h3>
                   </div>
                   <div class="white--text d-flex mt-5">
                     <h3 style="font-size: 20px">space:</h3>
@@ -59,21 +64,20 @@
                       <v-icon> mdi-delete-outline </v-icon>
                     </v-btn>
                   </v-col>
-                  <v-col cols="2" class="d-flex align-items-center">
+                  <v-col cols="2">
                     <v-btn
-                      class="mx-2"
+                      class="mx-2 pencil"
                       outlined
                       fab
                       small
                       color="#f5f5f5"
                       :to="`/projectedit/${item._id}`"
                     >
-                      <v-icon>mdi-pencil</v-icon>
+                      <v-icon class="mt-2">mdi-pencil</v-icon>
                     </v-btn>
                   </v-col>
                   <v-col cols="8">
                     <v-btn
-                      color="#f5f5f5"
                       class="mx-2"
                       :to="`/projectimgedit/${item._id}`"
                     >
@@ -130,7 +134,7 @@ h1 {
   opacity: 0.6;
 }
 .carousel {
-  height: 400px !important;
+  height: 450px !important;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
